@@ -1,0 +1,51 @@
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env*
+
+# Cache files
+.DS_Store
+
+# Temporary files
+*.tmp
+
+# Distribution
+*.min.*
+
+# Build outputs
+*.bundle.*
+*.map
+
+# Test files
+test/**/coverage/
+test/**/node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+*.logs
+
+# IDE files
+.vscode/
+.idea/
+
+# OS/Compiler temp files
+tmp/
+temp/
+
+# Package manager lock files
+package-lock.json
+yarn.lock
+
+# Docker files
+docker-compose.override.yml
+
+# Temporary upload files
+uploads/
