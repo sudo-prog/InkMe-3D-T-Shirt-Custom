@@ -92,8 +92,7 @@ const DashboardBox = (props) => {
                         <IoIosTimer /> Tháng Trước
                     </MenuItem>
                     <MenuItem onClick={handleClose}>
-                        <IoIosTimer /> Năm Trước
-                    </MenuItem>
+                        <IoIosTimer />Last Year===SPLIT===Last Month===SPLIT===Last Week===SPLIT===Yesterday===SPLIT===Last Month===SPLIT===Number of Customers</MenuItem>
 
                 </Menu>
 
