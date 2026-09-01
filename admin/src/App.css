@@ -699,9 +699,9 @@ button .loader {
   font-size: 22px;
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  min-width: 40px !important;
-  width: 40px !important;
-  height: 40px !important;
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
   border-radius: 50% !important;
 }
 
