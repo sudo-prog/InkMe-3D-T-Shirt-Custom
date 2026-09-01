@@ -36,7 +36,7 @@ const ContactForm = () => {
                             type="text"
                             name="name"
                             id="name"
-                            placeholder="Tên của bạn*"
+                            placeholder="Your name*"
                             value={formData.name}
                             onChange={handleChange}
                         />
@@ -52,7 +52,7 @@ const ContactForm = () => {
                             type="email"
                             name="email"
                             id="email"
-                            placeholder="Email của bạn*"
+                            placeholder="Your email*"
                             value={formData.email}
                             onChange={handleChange}
                         />
@@ -67,7 +67,7 @@ const ContactForm = () => {
                         <textarea
                             name="message"
                             id="message"
-                            placeholder="Nội dung của bạn"
+                            placeholder="Your content"
                             value={formData.message}
                             onChange={handleChange}
                         ></textarea>
@@ -79,8 +79,7 @@ const ContactForm = () => {
                 </div>
                 <div className="col-lg-6">
                     <button type="submit" className="theme-btn">
-                        <i className="fal fa-paper-plane"></i> Gửi liên hệ
-                    </button>
+                        <i className="fal fa-paper-plane"></i>Send contact</button>
                 </div>
             </div>
         </form>

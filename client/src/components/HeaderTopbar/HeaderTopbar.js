@@ -40,7 +40,7 @@ const HeaderTopbar = (props) => {
           </Link>
             - 24/7
         </p>
-        <p> 🔥 Miễn phí vận chuyển với đơn hàng trên 1000.000đ </p>
+        <p>🔥 Free shipping for orders over 1,000,000 VND</p>
         <div className="header-top-right">
           <div className="social-icon d-flex align-items-center">
             <Link onClick={ClickHandler} to="#">
