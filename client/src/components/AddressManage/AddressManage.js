@@ -46,14 +46,14 @@ const AddressManage = () => {
 
 
 
-    // Xử lý thêm địa chỉ mới
+    //Processing adding new address
     const handleAddAddress = async () => {
         try {
             if (!newAddress.city || !newAddress.details) {
                 context.setAlterBox({
                     open: true,
                     error: true,
-                    message: "Vui lòng điền đầy đủ thông tin địa chỉ",
+                    message: "Please fill in the full address information",
                 });
                 return;
             }
@@ -67,7 +67,7 @@ const AddressManage = () => {
                 context.setAlterBox({
                     open: true,
                     error: true,
-                    message: "Có lỗi xảy ra khi thêm địa chỉ",
+                    message: "An error occurred while adding the address",
                 });
                 return;
             }
@@ -78,26 +78,26 @@ const AddressManage = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Thêm địa chỉ thành công!",
+                message: "Address added successfully!",
             });
         } catch (error) {
             console.error('Error adding address:', error);
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Có lỗi xảy ra khi thêm địa chỉ",
+                message: "An error occurred while adding the address",
             });
         }
     };
 
-    // Xử lý sửa địa chỉ
+    //Processing address edit
     const handleEditAddress = async () => {
         try {
             if (!editingAddress.city || !editingAddress.details) {
                 context.setAlterBox({
                     open: true,
                     error: true,
-                    message: "Vui lòng điền đầy đủ thông tin địa chỉ",
+                    message: "Please fill in the full address information",
                 });
                 return;
             }
@@ -112,7 +112,7 @@ const AddressManage = () => {
                 context.setAlterBox({
                     open: true,
                     error: true,
-                    message: "Có lỗi xảy ra khi sửa địa chỉ",
+                    message: "An error occurred while editing the address",
                 });
                 return;
             }
@@ -123,25 +123,25 @@ const AddressManage = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Cập nhật địa chỉ thành công!",
+                message: "Address updated successfully!",
             });
         } catch (error) {
             console.error('Error editing address:', error);
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Có lỗi xảy ra khi sửa địa chỉ",
+                message: "An error occurred while editing the address",
             });
         }
     };
 
-    // Hiển thị dialog xác nhận xóa
+    //Show delete confirmation dialog
     const showDeleteConfirmation = (addressId) => {
         setDeletingAddressId(addressId);
         setShowDeleteConfirmModal(true);
     };
 
-    // Xử lý xóa địa chỉ
+    //Processing address deletion
     const handleDeleteAddress = async () => {
         try {
             const response = await deleteData(`/api/address/${deletingAddressId}`);
@@ -150,7 +150,7 @@ const AddressManage = () => {
                 context.setAlterBox({
                     open: true,
                     error: true,
-                    message: response.notify || response.message || "Có lỗi xảy ra khi xóa địa chỉ",
+                    message: response.notify || response.message || "An error occurred while deleting the address",
                 });
                 return;
             }
@@ -164,19 +164,19 @@ const AddressManage = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Xóa địa chỉ thành công!",
+                message: "Address deleted successfully!",
             });
         } catch (error) {
             console.error('Error deleting address:', error);
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Có lỗi xảy ra khi xóa địa chỉ",
+                message: "An error occurred while deleting the address",
             });
         }
     };
 
-    // Xử lý đặt địa chỉ mặc định
+    //Processing default address setting
     const handleSetDefaultAddress = async (addressId) => {
         try {
             const response = await editData(`/api/address/${addressId}/set-default`);
@@ -185,18 +185,17 @@ const AddressManage = () => {
                 context.setAlterBox({
                     open: true,
                     error: true,
-                    message: response.notify || response.message || "Có lỗi xảy ra khi đặt địa chỉ mặc định",
+                    message: response.notify || response.message || "An error occurred while setting the default address",
                 });
                 return;
             }
 
-            await fetchAddresses();
-        } catch (error) {
+            await fetchAddresseAddress listh (error) {
             console.error('Error setting default address:', error);
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Có lỗi xảy ra khi đặt địa chỉ mặc định",
+                message: "An error occurred while setting the default address",
             });
         }
     };
@@ -204,19 +203,14 @@ const AddressManage = () => {
     return (
         <div className="checkout-single boxshado-single">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <h4>Địa chỉ giao hàng</h4>
+                <h4>Shipping address</h4>
                 <Button
                     variant="contained"
                     startIcon={<Add />}
                     onClick={() => setShowAddAddressModal(true)}
                     style={{ backgroundColor: '#28a745' }}
-                >
-                    Thêm địa chỉ
-                </Button>
-            </div>
-
-            {/* Danh sách địa chỉ */}
-            <RadioGroup value={context.selectedAddressId} onChange={(e) => context.setSelectedAddressId(e.target.value)}>
+                >Add address</Button>
+            </div>{/* Address list */}<RadioGroup value={context.selectedAddressId} onChange={(e) => context.setSelectedAddressId(e.target.value)}>
                 {addresses.length > 0 ? (
                     addresses.map((addr) => (
                         <Card key={addr._id} style={{ marginBottom: '10px', border: context.selectedAddressId === addr._id ? '2px solid #007bff' : '1px solid #ddd' }}>
@@ -228,9 +222,7 @@ const AddressManage = () => {
                                             <Typography variant="subtitle1" style={{ fontWeight: 'bold' }}>
                                                 {addr.city}
                                                 {addr.isDefault && (
-                                                    <span style={{ marginLeft: '10px', color: '#28a745', fontSize: '0.8em' }}>
-                                                        (Mặc định)
-                                                    </span>
+                                                    <span style={{ marginLeft: '10px', color: '#28a745', fontSize: '0.8em' }}>(Default)</span>
                                                 )}
                                             </Typography>
                                             <Typography variant="body2" color="textSecondary">
@@ -249,9 +241,7 @@ const AddressManage = () => {
                                                 size="small"
                                                 onClick={() => handleSetDefaultAddress(addr._id)}
                                                 style={{ marginRight: '10px' }}
-                                            >
-                                                Đặt mặc định
-                                            </Button>
+                                            >Set as default</Button>
                                         )}
                                         <IconButton
                                             size="small"
@@ -260,7 +250,7 @@ const AddressManage = () => {
                                                 setShowEditAddressModal(true);
                                             }}
                                             style={{ marginRight: '5px' }}
-                                        >
+       Add address modal             >
                                             <Edit fontSize="small" />
                                         </IconButton>
                                         <IconButton
@@ -276,20 +266,15 @@ const AddressManage = () => {
                         </Card>
                     ))
                 ) : (
-                    <Typography variant="body1" color="textSecondary" style={{ textAlign: 'center', padding: '20px' }}>
-                        Chưa có địa chỉ nào. Vui lòng thêm địa chỉ giao hàng.
-                    </Typography>
+                    <Typography variant="body1" color="textSecondary" style={{ textAlign: 'center', padding: '20px' }}>No addresses found. Please add a delivery address.</Typography>
                 )}
-            </RadioGroup>
-
-            {/* Modal thêm địa chỉ */}
-            <Dialog open={showAddAddressModal} onClose={() => setShowAddAddressModal(false)} maxWidth="sm" fullWidth>
-                <DialogTitle>Thêm địa chỉ mới</DialogTitle>
+            </RadioGroup>{/* Add address modal */}<Dialog open={showAddAddressModal} onClose={() => setShowAddAddressModal(false)} maxWidth="sm" fullWidth>
+                <DialogTitle>Add new address</DialogTitle>
                 <DialogContent>
                     <div style={{ paddingTop: '10px' }}>
                         <TextField
                             fullWidth
-                            label="Tỉnh/Thành phố"
+                            label="Province/City"
                             value={newAddress.city}
                             onChange={(e) => setNewAddress(prev => ({ ...prev, city: e.target.value }))}
                             margin="normal"
@@ -297,7 +282,7 @@ const AddressManage = () => {
                         />
                         <TextField
                             fullWidth
-                            label="Địa chỉ chi tiết"
+              Edit address modal="Detailed address"
                             value={newAddress.details}
                             onChange={(e) => setNewAddress(prev => ({ ...prev, details: e.target.value }))}
                             margin="normal"
@@ -317,20 +302,17 @@ const AddressManage = () => {
                     </div>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setShowAddAddressModal(false)}>Hủy</Button>
+                    <Button onClick={() => setShowAddAddressModal(false)}>Cancel</Button>
                     <Button onClick={handleAddAddress} variant="contained">Thêm</Button>
                 </DialogActions>
-            </Dialog>
-
-            {/* Modal sửa địa chỉ */}
-            <Dialog open={showEditAddressModal} onClose={() => setShowEditAddressModal(false)} maxWidth="sm" fullWidth>
-                <DialogTitle>Sửa địa chỉ</DialogTitle>
+            </Dialog>{/* Edit address modal */}<Dialog open={showEditAddressModal} onClose={() => setShowEditAddressModal(false)} maxWidth="sm" fullWidth>
+                <DialogTitle>Edit address</DialogTitle>
                 <DialogContent>
                     {editingAddress && (
                         <div style={{ paddingTop: '10px' }}>
                             <TextField
                                 fullWidth
-                                label="Tỉnh/Thành phố"
+                                label="Province/City"
                                 value={editingAddress.city}
                                 onChange={(e) => setEditingAddress(prev => ({ ...prev, city: e.target.value }))}
                                 margin="normal"
@@ -338,7 +320,7 @@ const AddressManage = () => {
                             />
                             <TextField
                                 fullWidth
-                                label="Địa chỉ chi tiết"
+                                label="Detailed address"
                                 value={editingAddress.details}
                                 onChange={(e) => setEditingAddress(prev => ({ ...prev, details: e.target.value }))}
                                 margin="normal"
@@ -359,26 +341,19 @@ const AddressManage = () => {
                     )}
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setShowEditAddressModal(false)}>Hủy</Button>
+                    <Button onClick={() => setShowEditAddressModal(false)}>Cancel</Button>
                     <Button onClick={handleEditAddress} variant="contained">Cập nhật</Button>
                 </DialogActions>
-            </Dialog>
-
-            {/* Modal xác nhận xóa địa chỉ */}
-            <Dialog open={showDeleteConfirmModal} onClose={() => setShowDeleteConfirmModal(false)} maxWidth="xs" fullWidth>
-                <DialogTitle>Xác nhận xóa</DialogTitle>
+            </Dialog>{/* Address deletion confirmation modal */}<Dialog open={showDeleteConfirmModal} onClose={() => setShowDeleteConfirmModal(false)} maxWidth="xs" fullWidth>
+                <DialogTitle>Confirm deletion</DialogTitle>
                 <DialogContent>
-                    <Typography>
-                        Bạn có chắc chắn muốn xóa địa chỉ này không? Hành động này không thể hoàn tác.
-                    </Typography>
+                    <Typography>Are you sure you want to delete this address? This action cannot be undone.</Typography>
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() => {
                         setShowDeleteConfirmModal(false);
                         setDeletingAddressId(null);
-                    }}>
-                        Hủy
-                    </Button>
+                    }}>Cancel</Button>
                     <Button onClick={handleDeleteAddress} variant="contained" color="error">
                         Xóa
                     </Button>

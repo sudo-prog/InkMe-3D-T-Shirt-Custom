@@ -131,7 +131,7 @@ const Signup = () => {
             <section className="loginSection signupSection">
                 <div className="row">
                     <div className="col-md-8 d-flex align-items-center justify-content-center flex-column part1">
-                        <h1>Ví dụ tiêu đề & <span className="text-sky"> Admin dashboard</span></h1>
+                        <h1>Example title &<span className="text-sky"> Admin dashboard</span></h1>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -141,7 +141,7 @@ const Signup = () => {
 
                         <div className="w-100 mt-4">
                             <Link to={'/'}>
-                                <Button className="btn-blue btn-lg btn-big"><IoMdHome /> Trang chủ</Button>
+                                <Button className="btn-blue btn-lg btn-big"><IoMdHome />Home</Button>
                             </Link>
 
                         </div>
@@ -151,7 +151,7 @@ const Signup = () => {
                         <div className="loginBox">
                             <div className="logo text-center">
                                 <img src={Logo} alt="logo" width="60px" />
-                                <h5 className="">Đăng ký tài khoản mới</h5>
+                                <h5 className="">Register new account</h5>
                             </div>
 
                             <div className="wrapper mt-3 card border">
@@ -159,7 +159,7 @@ const Signup = () => {
                                     <div className={`form-group position-relative ${inputIndex === 0 && 'focus'}`}>
                                         <span className="icon"><FaUserCircle /></span>
                                         <input type="text" className="form-control"
-                                            placeholder="Họ và tên" onFocus={() => focusInput(0)}
+                                            placeholder="Full name" onFocus={() => focusInput(0)}
                                             onBlur={() => setInputIndex(null)} autoFocus
                                             name="name" onChange={onChangeInput} />
                                     </div>
@@ -183,7 +183,7 @@ const Signup = () => {
                                     <div className={`form-group position-relative ${inputIndex === 3 && 'focus'}`}>
                                         <span className="icon"><RiLockPasswordFill /></span>
                                         <input type={`${isShowPassword === true ? 'text' : 'password'}`} className="form-control"
-                                            placeholder="Điền mật khẩu" onFocus={() => focusInput(3)}
+                                            placeholder="Enter password" onFocus={() => focusInput(3)}
                                             onBlur={() => setInputIndex(null)}
                                             name="password" onChange={onChangeInput} />
 
@@ -198,7 +198,7 @@ const Signup = () => {
                                     <div className={`form-group position-relative ${inputIndex === 4 && 'focus'}`}>
                                         <span className="icon"><IoShieldCheckmarkSharp /></span>
                                         <input type={`${isShowConfirmPassword === true ? 'text' : 'password'}`} className="form-control"
-                                            placeholder="Xác nhận mật khẩu" onFocus={() => focusInput(4)}
+                                            placeholder="Confirm password" onFocus={() => focusInput(4)}
                                             onBlur={() => setInputIndex(null)}
                                             name="confirmPassword" onChange={onChangeInput} />
 
@@ -211,12 +211,12 @@ const Signup = () => {
                                     </div>
 
                                     <FormControlLabel control={<Checkbox />}
-                                        label="Tôi đồng ý với điều khoản & dịch vụ" />
+                                        label="I agree to the terms & services" />
 
                                     <div className="form-group">
                                         <Button type="submit" className="btn-blue btn-big w-100">
                                             {
-                                                loading === false ? <CircularProgress /> : 'Đăng ký'
+                                                loading === false ? <CircularProgress /> : 'Sign up'
                                             }
                                         </Button>
                                     </div>
@@ -224,7 +224,7 @@ const Signup = () => {
                                     <div className="form-group text-center mt-3">
                                         <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
                                             <span className="line"></span>
-                                            <span className="txt">hoặc</span>
+                                            <span className="txt">Or</span>
                                             <span className="line"></span>
                                         </div>
 
@@ -235,8 +235,7 @@ const Signup = () => {
                                     </div>
                                 </form>
                                 <div className="wrapper mt-3 card border footer p-0">
-                                    <span className="text-center">
-                                        Đã có tài khoản? <Link to={'/login'} className="link color">Đăng nhập</Link>
+                                    <span className="text-center">Already have an account?<Link to={'/login'} className="link color">Đăng nhập</Link>
                                     </span>
                                 </div>
                             </div>

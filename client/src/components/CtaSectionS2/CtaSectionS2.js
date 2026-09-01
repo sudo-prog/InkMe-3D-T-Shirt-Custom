@@ -49,11 +49,8 @@ const CtaSectionS2 = () => {
                     </div>
                     <div className="cta-content">
                         <div className="section-title">
-                            <h6 className="bg-white wow fadeInUp">Dịch vụ in ấn</h6>
-                            <h2 className="text-white split-text right">
-                                Sẵn sàng tạo ra sản phẩm <br/>
-                                    đặc biệt cho bạn?
-                            </h2>
+                            <h6 className="bg-white wow fadeInUp">Printing services</h6>
+                            <h2 className="text-white split-text right">Ready to create products<br/>special for you?</h2>
                         </div>
                         <div className="cta-btn mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
                             <Link onClick={ClickHandler} to="/contact" className="theme-btn">Liên hệ ngay</Link>

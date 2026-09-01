@@ -16,10 +16,8 @@ const FeatureSection = () => {
                                     <img src={Feature1} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Chọn sản phẩm</h3>
-                                    <p>
-                                        In trên chất liệu cotton 100% chất lượng cao cho lớp hoàn thiện sống động và bền cả ngày
-                                    </p>
+                                    <h3>Select product</h3>
+                                    <p>Printed on high-quality 100% cotton for a vivid and durable all-day finish</p>
                                 </div>
                             </div>
                         </div>
@@ -29,10 +27,8 @@ const FeatureSection = () => {
                                     <img src={Feature2} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Tùy chỉnh & đánh giá</h3>
-                                    <p>
-                                        Tùy chỉnh sản phẩm theo ý thích và xem trước để đảm bảo sự hài lòng trước khi in.
-                                    </p>
+                                    <h3>Customize & review</h3>
+                                    <p>Customize products to your liking and preview them to ensure satisfaction before printing.</p>
                                 </div>
                             </div>
                         </div>
@@ -42,10 +38,8 @@ const FeatureSection = () => {
                                     <img src={Feature3} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Sẵn sàng giao hàng</h3>
-                                    <p>
-                                        Sản phẩm luôn được chuẩn bị và sẵn sàng để vận chuyển đến tay bạn một cách nhanh chóng nhất.
-                                    </p>
+                                    <h3>Ready for delivery</h3>
+                                    <p>Products are always prepared and ready to be shipped to you as quickly as possible.</p>
                                 </div>
                             </div>
                         </div>
