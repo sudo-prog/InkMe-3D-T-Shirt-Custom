@@ -6,14 +6,14 @@ const QuantityBox = ({ value, onQuantityChange, loading }) => {
     const [inputValue, setInputValue] = useState(value || 1);
     const [isEditing, setIsEditing] = useState(false);
 
-    // Cập nhật giá trị khi `value` thay đổi từ props
+    //Update value when `value` changes from props
     useEffect(() => {
         if (value !== undefined && value !== null && value !== '') {
             setInputValue(parseInt(value));
         }
     }, [value]);
 
-    // Hàm cập nhật số lượng và gọi API nếu thay đổi
+    //Function to update quantity and call API if changed
     const handleQuantityChange = (newQuantity) => {
         if (newQuantity < 1) return;
         setInputValue(newQuantity);
@@ -22,15 +22,15 @@ const QuantityBox = ({ value, onQuantityChange, loading }) => {
         }
     };
 
-    // Xử lý khi người dùng thay đổi số lượng bằng cách nhập trực tiếp
+    //Handle when user changes quantity by direct input
     const handleInputChange = (e) => {
         const newValue = e.target.value;
-        if (/^\d*$/.test(newValue)) { // Chỉ cho phép nhập số
+        if (/^\d*$/.test(newValue)) { //Only allow numeric input
             setInputValue(newValue);
         }
     };
 
-    // Khi nhấn Enter hoặc mất focus, cập nhật giỏ hàng
+    //Update cart when pressing Enter or losing focus
     const handleInputBlur = () => {
         setIsEditing(false);
         const newQuantity = parseInt(inputValue) || 1;
@@ -43,7 +43,7 @@ const QuantityBox = ({ value, onQuantityChange, loading }) => {
         setIsEditing(true);
     };
 
-    // Xử lý khi nhấn Enter
+    //Handle Enter key press
     const handleKeyPress = (e) => {
         if (e.key === "Enter") {
             e.target.blur();

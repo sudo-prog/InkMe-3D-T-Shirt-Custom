@@ -17,10 +17,8 @@ const StoreSection = () => {
                                     <img src={SS1} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Sản Xuất Nội Địa</h3>
-                                    <p>
-                                        In áo nhanh, giao hàng sớm, tiết kiệm chi phí vận chuyển.
-                                    </p>
+                                    <h3>Domestic Production</h3>
+                                    <p>Fast printing, early delivery, saving on shipping costs.</p>
                                 </div>
                             </div>
                         </div>
@@ -30,10 +28,8 @@ const StoreSection = () => {
                                     <img src={SS2} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Chất Lượng Đảm Bảo</h3>
-                                    <p>
-                                        Thiết kế 3D mô phỏng sát thực tế, in chuẩn từng chi tiết.
-                                    </p>
+                                    <h3>Guaranteed Quality</h3>
+                                    <p>Realistic 3D simulation design, precise printing in every detail.</p>
                                 </div>
                             </div>
                         </div>
@@ -43,10 +39,8 @@ const StoreSection = () => {
                                     <img src={SS3} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Tự Động Hoá Toàn Quy Trình</h3>
-                                    <p>
-                                        Từ thiết kế đến in ấn – thao tác chỉ vài cú nhấp chuột.
-                                    </p>
+                                    <h3>Fully Automated Process</h3>
+                                    <p>From design to printing – all in just a few clicks.</p>
                                 </div>
                             </div>
                         </div>
@@ -56,10 +50,8 @@ const StoreSection = () => {
                                     <img src={SS4} alt="img" />
                                 </div>
                                 <div className="content">
-                                    <h3>Không Yêu Cầu Số Lượng Tối Thiểu</h3>
-                                    <p>
-                                        Tự do đặt 1 áo lẻ hay 100 áo nhóm – không lo tồn kho.
-                                    </p>
+                                    <h3>No Minimum Order Quantity</h3>
+                                    <p>Feel free to order 1 single shirt or 100 group shirts – no worries about inventory.</p>
                                 </div>
                             </div>
                         </div>
