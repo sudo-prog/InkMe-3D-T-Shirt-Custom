@@ -107,7 +107,7 @@ const Products = () => {
       context.setAlterBox({
         open: true,
         error: false,
-        message: "Xóa sản phẩm thành công"
+        message: "Product deleted successfully"
       })
       fetchDataFromApi('/api/products').then((res) => {
         setProductList(res);
@@ -119,7 +119,7 @@ const Products = () => {
     <>
       <div className="right-content w-100">
         <div className="card shadow border-0 w-100 flex-row p-4">
-          <h5 className='mb-0 d-flex align-items-center'>Danh sách sản phẩm</h5>
+          <h5 className='mb-0 d-flex align-items-center'>Product list</h5>
 
           <div className="ml-auto d-flex align-items-center">
 
@@ -127,28 +127,28 @@ const Products = () => {
               <StyledBreadcrumb
                 component="a"
                 href='#'
-                label="Sản phẩm"
+                label="Product"
                 icon={<HomeIcon fontSize="small" />}
               />
 
               <StyledBreadcrumb
-                label="Danh sách sản phẩm"
+                label="Product list"
                 deleteIcon={<ExpandMoreIcon />}
               />
             </Breadcrumbs>
 
             <Link to="/product/upload">
-              <Button className='btn-blue ml-3 pl-3 pr-3'>Thêm sản phẩm</Button>
+              <Button className='btn-blue ml-3 pl-3 pr-3'>Add product</Button>
             </Link>
 
           </div>
         </div>
         <div className='card shadow border-0 p-3'>
-          <h3 className='hd'>Sản phẩm bán chạy</h3>
+          <h3 className='hd'>Best-selling products</h3>
 
           <div className="row cardFilters mt-3">
             <div className="col-md-3">
-              <h4>Sắp xếp theo</h4>
+              <h4>Sort by</h4>
               <FormControl size='small' className='w-100'>
                 <Select
                   value={showBy}
@@ -159,14 +159,14 @@ const Products = () => {
                   className='w-100'
                 >
                   <MenuItem value=""><em>None</em></MenuItem>
-                  <MenuItem value={10}>Tảng</MenuItem>
+                  <MenuItem value={10}>Platform</MenuItem>
                   <MenuItem value={20}>Giá</MenuItem>
                 </Select>
               </FormControl>
             </div>
 
             <div className="col-md-3">
-              <h4>Danh Mục</h4>
+              <h4>Category</h4>
               <FormControl size='small' className='w-100'>
                 <Select
                   value={showBysetCatBy}
@@ -202,19 +202,19 @@ const Products = () => {
               <thead className='thead-dark'>
                 <tr>
                   <th>#ID</th>
-                  <th style={{ width: '250px' }}>Sản Phẩm</th>
-                  <th>Danh Mục</th>
-                  <th>Danh mục con</th>
-                  <th>Nhãn hiệu</th>
+                  <th style={{ width: '250px' }}>Product</th>
+                  <th>Category</th>
+                  <th>Sub-category</th>
+                  <th>Brand</th>
                   <th>Giá bán</th>
-                  <th>Giảm giá</th>
-                  <th>Số lượng</th>
-                  <th>Rams sản phẩm</th>
-                  <th>Kích thước</th>
-                  <th>Cân nặng</th>
-                  <th>Đánh giá</th>
-                  <th>Đặt hàng</th>
-                  <th>Hành động</th>
+                  <th>Discount</th>
+                  <th>Quantity</th>
+                  <th>Product RAM</th>
+                  <th>Size</th>
+                  <th>Weight</th>
+                  <th>Review</th>
+                  <th>Order</th>
+                  <th>Action</th>
                 </tr>
               </thead>
 
