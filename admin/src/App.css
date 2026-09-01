@@ -147,9 +147,9 @@ header .logo span {
 }
 
 header button.rounded-circle {
-  min-width: 40px !important;
-  width: 40px !important;
-  height: 40px !important;
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
   background: #f0f5ff;
   /* color: #292929; */
 }
@@ -754,9 +754,9 @@ button .loader {
 }
 
 .table tbody .actions button {
-  min-width: 32px !important;
-  width: 32px !important;
-  height: 32px !important;
+  min-width: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
   margin: 0px 3px !important;
 }
 
