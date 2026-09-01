@@ -70,7 +70,7 @@ const ForgotPassword = () => {
         <div className="loginBox">
           <div className="logo text-center">
             <img src={Logo} alt="logo" width="60px" />
-            <h5 className="">Quên mật khẩu</h5>
+            <h5 className="">Forgot password</h5>
           </div>
 
           <div className="wrapper mt-3 card border">
@@ -85,7 +85,7 @@ const ForgotPassword = () => {
                 <input
                   type="email"
                   className="form-control"
-                  placeholder="Nhập email của bạn"
+                  placeholder="Enter your email"
                   onFocus={() => focusInput(0)}
                   onBlur={() => setInputIndex(null)}
                   value={email}
@@ -96,14 +96,12 @@ const ForgotPassword = () => {
 
               <div className="form-group">
                 <Button type="submit" className="btn-blue btn-big w-100">
-                  {loading ? <CircularProgress /> : "Gửi yêu cầu"}
+                  {loading ? <CircularProgress /> : "Send request"}
                 </Button>
               </div>
 
               <div className="form-group text-center mt-3">
-                <Link to="/login" className="link">
-                  Quay lại đăng nhập
-                </Link>
+                <Link to="/login" className="link">Back to login</Link>
               </div>
             </form>
           </div>

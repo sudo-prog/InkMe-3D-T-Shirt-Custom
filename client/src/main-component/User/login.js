@@ -56,14 +56,14 @@ const LoginScreen = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const userList = await getUsers(); // Chờ dữ liệu trả về
+        const userList = await getUsers(); //Wait for returned data
         //  setUser(userList);
       } catch (error) {
         console.error("Error fetching users", error);
       }
     };
 
-    fetchUser(); // Gọi hàm async bên trong useEffect
+    fetchUser(); //Call async function inside useEffect
   }, []);
 
   const signIn = (e) => {
@@ -183,7 +183,7 @@ const LoginScreen = () => {
         <div className="loginBox">
           <div className="logo text-center">
             <img src={Logo} alt="logo" width="60px" />
-            <h5 className="">Đăng nhập</h5>
+            <h5 className="">Log in</h5>
           </div>
 
           <div className="wrapper mt-3 card border">
@@ -198,7 +198,7 @@ const LoginScreen = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Tên đăng nhập"
+                  placeholder="Username"
                   onFocus={() => focusInput(0)}
                   onBlur={() => setInputIndex(null)}
                   autoFocus
@@ -217,7 +217,7 @@ const LoginScreen = () => {
                 <input
                   type={`${isShowPassword === true ? "text" : "password"}`}
                   className="form-control"
-                  placeholder="Điền mật khẩu"
+                  placeholder="Enter password"
                   onFocus={() => focusInput(1)}
                   onBlur={() => setInputIndex(null)}
                   name="password"
@@ -232,19 +232,20 @@ const LoginScreen = () => {
                 </span>
               </div>
 
-              <div className="form-group">
-                <Button type="submit" className="btn-blue btn-big w-100">
-                  {loading === true ? <CircularProgress /> : "Đăng Nhập"}
-                </Button>
-              </div>
-
+              <div cla<Button
+ Variant=""
+ ClassName=""
+ >
+ <img src={GoogleIcons} width="" alt="" /> Sign in with
+ Google
+ </Button>
               <div className="form-group text-center mt-3">
                 <Link to={"/forgot-password"} className="link">
                   Quên mật khẩu
                 </Link>
                 <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
                   <span className="line"></span>
-                  <span className="txt">hoặc</span>
+                  <span className="txt">Or</span>
                   <span className="line"></span>
                 </div>
 
@@ -267,9 +268,7 @@ const LoginScreen = () => {
           </div>
 
           <div className="wrapper mt-3 card border footer">
-            <span className="text-center">
-              Bạn chưa có tài khoản?{" "}
-              <Link to={"/signup"} className="link color">
+            <span className="text-center">Don't have an account?{" "}<Link to={"/signup"} className="link color">
                 Đăng ký
               </Link>
             </span>
