@@ -47,7 +47,7 @@ export const postData = async (url, formData) => {
 //     try {
 //         const response = await fetch(import.meta.env.VITE_APP_BASE_URL + url, {
 //             method: 'POST',
-//             body: formData, // Gửi trực tiếp `FormData`
+//Body: formData, // Send `FormData` directly
 //         });
 
 //         if (response.ok) {
