@@ -10,7 +10,7 @@ const ContactPage = () => {
     return (
         <Fragment>
             <NavbarS2 hclass={'header-section-2 style-two'} />
-            <PageTitle pageTitle={'Liên hệ với chúng tôi'} pagesub={'Liên Hệ'} />
+            <PageTitle pageTitle={'Contact us'} pagesub={'Contact'} />
             <Contactpage />
             <CtaSectionS2 />
             <FooterS3 />
