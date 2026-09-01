@@ -170,7 +170,7 @@ const AddSubCat = () => {
                             <Button type="submit" className="btn-blue btn-lg btn-big">
                                 <FaCloudUploadAlt /> &nbsp;
                                 {loading === true ? <CircularProgress color='inherit'
-                                    className='loader ml-2' /> : 'Xác Nhận'}
+                                    className='loader ml-2' /> : 'Confirm===SPLIT===Subcategory===SPLIT===- Select category --===SPLIT===Category===SPLIT===Add subcategory===SPLIT===Subcategory===SPLIT===Add subcategory===SPLIT===Subcategory added successfully===SPLIT===Please enter subcategory===SPLIT===Please select parent category'}
                             </Button>
                         </div>
                     </div>

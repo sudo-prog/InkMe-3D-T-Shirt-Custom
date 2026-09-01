@@ -131,7 +131,7 @@ const Category = () => {
                   <th>Danh mục</th>
                   <th>Danh mục con</th>
                   <th>Màu</th>
-                  <th>Hành động</th>
+                  <th>Action===SPLIT===Subcategory===SPLIT===Category===SPLIT===Image===SPLIT===Add Category===SPLIT===Category List===SPLIT===Classification===SPLIT===Product Category List</th>
                 </tr>
               </thead>
 

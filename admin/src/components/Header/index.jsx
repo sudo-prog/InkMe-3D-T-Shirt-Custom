@@ -129,10 +129,10 @@ const Header = () => {
                             <span>
                               <b>Thông báo </b>
                               Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Order===SPLIT===Notification example</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -148,12 +148,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>Order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -169,12 +167,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>Order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -190,12 +186,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>Order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -211,12 +205,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>Order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -232,12 +224,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>Order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -253,12 +243,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -274,12 +262,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -295,12 +281,10 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem> <MenuItem onClick={handleCloseMyAccDrop}>
@@ -316,19 +300,17 @@ const Header = () => {
                         <div className="dropdown-info">
                           <h4>
                             <span>
-                              <b>Thông báo </b>
-                              Ví dụ thông báo
-                              <b> đơn hàng</b>
+                              <b>Thông báo </b>Example notification<b>order</b>
                             </span>
                           </h4>
-                          <p className="text-sky">Vài giây trước</p>
+                          <p className="text-sky">A few seconds ago</p>
                         </div>
                       </div>
                     </MenuItem>
                   </div>
 
                   <div className="pl-3 pr-3 pt-3 pb-1 d-flex justify-content-center">
-                    <button className="btn btn-blue">Xem tất cả thông báo</button>
+                    <button className="btn btn-blue">View all notifications</button>
                   </div>
 
                 </Menu>
@@ -337,7 +319,7 @@ const Header = () => {
               {
                 context.isLogin !== true ?
                   <Link to={'/login'}>
-                    <Button className="btn-blue btn-lg">Đăng nhập</Button>
+                    <Button className="btn-blue btn-lg">Login</Button>
                   </Link>
                   :
                   <div className="myAccWrapper">

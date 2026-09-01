@@ -202,7 +202,7 @@ const AddCategory = () => {
                             href="#"
                         />
                         <StyledBreadcrumb
-                            label="Thêm danh mục"
+                            label="User Safety: safe"
                         />
                     </Breadcrumbs>
                 </div>
@@ -273,7 +273,7 @@ const AddCategory = () => {
                                 <Button type="submit" className="btn-blue btn-lg btn-big w-100">
                                     <FaCloudUploadAlt /> &nbsp;
                                     {loading === true ? <CircularProgress color='inherit'
-                                        className='loader ml-2' /> : 'Thêm danh mục'}
+                                        className='loader ml-2' /> : 'User Safety: safe'}
                                 </Button>
                             </div>
                         </div>
