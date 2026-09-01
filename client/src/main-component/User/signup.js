@@ -176,8 +176,7 @@ const Signup = () => {
             <div className="w-100 mt-4">
               <Link to={"/"}>
                 <Button className="btn-blue btn-lg btn-big">
-                  <IoMdHome /> Trang chủ
-                </Button>
+                  <IoMdHome />Home page</Button>
               </Link>
             </div>
           </div>
@@ -185,7 +184,7 @@ const Signup = () => {
             <div className="loginBox">
               <div className="logo text-center">
                 <img src={Logo} alt="logo" width="60px" />
-                <h5 className="">Đăng ký tài khoản mới</h5>
+                <h5 className="">Register a new account</h5>
               </div>
 
               <div className="wrapper mt-3 card border">
@@ -200,7 +199,7 @@ const Signup = () => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Họ và tên"
+                      placeholder="Full name"
                       onFocus={() => focusInput(0)}
                       onBlur={() => setInputIndex(null)}
                       autoFocus
@@ -255,7 +254,7 @@ const Signup = () => {
                     <input
                       type={`${isShowPassword === true ? "text" : "password"}`}
                       className="form-control"
-                      placeholder="Điền mật khẩu"
+                      placeholder="Enter password"
                       onFocus={() => focusInput(3)}
                       onBlur={() => setInputIndex(null)}
                       name="password"
@@ -281,20 +280,21 @@ const Signup = () => {
                       type={`${isShowConfirmPassword === true ? "text" : "password"
                         }`}
                       className="form-control"
-                      placeholder="Xác nhận mật khẩu"
+                      placeholder="Confirm password"
                       onFocus={() => focusInput(4)}
                       onBlur={() => setInputIndex(null)}
                       name="confirmPassword"
                       onChange={onChangeInput}
                     />
 
-                    <span
-                      className="toggleShowPassword"
-                      onClick={() =>
-                        setIsShowConfirmPassword(!isShowConfirmPassword)
-                      }
-                    >
-                      {isShowConfirmPassword === true ? (
+                   <Button
+ Type=""
+ Variant=""
+ ClassName=""
+ >
+ <img src={GoogleIcons} width="" alt="" /> Sign in
+ With Google
+ </Button>ue ? (
                         <IoMdEyeOff />
                       ) : (
                         <IoMdEye />
@@ -304,7 +304,7 @@ const Signup = () => {
 
                   <FormControlLabel
                     control={<Checkbox />}
-                    label="Tôi đồng ý với điều khoản & dịch vụ"
+                    label="I agree to the terms & services"
                   />
 
                   <div className="form-group">
@@ -313,14 +313,14 @@ const Signup = () => {
                       className="btn-blue btn-big w-100"
                       style={{ background: "#2988BC" }}
                     >
-                      {loading === false ? <CircularProgress /> : "Đăng ký"}
+                      {loading === false ? <CircularProgress /> : "Sign up"}
                     </Button>
                   </div>
 
                   <div className="form-group text-center mt-3">
                     <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
                       <span className="line"></span>
-                      <span className="txt">hoặc</span>
+                      <span className="txt">Or</span>
                       <span className="line"></span>
                     </div>
 
@@ -335,9 +335,7 @@ const Signup = () => {
                   </div>
                 </form>
                 <div className="wrapper mt-3 card border footer p-0">
-                  <span className="text-center">
-                    Đã có tài khoản?{" "}
-                    <Link to={"/login"} className="link color">
+                  <span className="text-center">Already have an account?{" "}<Link to={"/login"} className="link color">
                       Đăng nhập
                     </Link>
                   </span>

@@ -23,19 +23,19 @@ export const checkPaymentStatus = async (orderId, amount) => {
             throw new Error(data.message || 'API error');
         }
 
-        // Tìm giao dịch phù hợp
+        //Find matching transaction
         const matchingTransaction = data.data.records.find(transaction => {
-            // Kiểm tra amount
+            //Check amount
             if (transaction.amount !== amount) {
                 return false;
             }
 
-            // Kiểm tra description có chứa orderId
+            //Check if description contains orderId
             if (transaction.description && transaction.description.includes(orderId)) {
                 return true;
             }
 
-            // Kiểm tra thời gian giao dịch (trong vòng 24h gần đây)
+            //Check transaction time (within the last 24h)
             const transactionTime = new Date(transaction.when);
             const now = new Date();
             const timeDiff = now - transactionTime;
@@ -52,7 +52,7 @@ export const checkPaymentStatus = async (orderId, amount) => {
             success: true,
             isPaid: !!matchingTransaction,
             transaction: matchingTransaction || null,
-            message: matchingTransaction ? 'Thanh toán thành công' : 'Chưa tìm thấy giao dịch thanh toán'
+            message: matchingTransaction ? 'Thanh toán thành công' : 'Payment transaction not found'
         };
 
     } catch (error) {
@@ -61,7 +61,7 @@ export const checkPaymentStatus = async (orderId, amount) => {
             success: false,
             isPaid: false,
             transaction: null,
-            message: 'Lỗi khi kiểm tra trạng thái thanh toán'
+            message: 'Error when checking payment status'
         };
     }
 };
@@ -69,7 +69,7 @@ export const checkPaymentStatus = async (orderId, amount) => {
 export const startPaymentMonitoring = (orderId, amount, onPaymentDetected) => {
     let intervalId;
     let checkCount = 0;
-    const maxChecks = 10; // Kiểm tra tối đa 10 lần (5 phút với interval 30s)
+    const maxChecks = 10; //Check a maximum of 10 times (5 minutes with a 30s interval)
 
     const checkPayment = async () => {
         checkCount++;
@@ -88,13 +88,13 @@ export const startPaymentMonitoring = (orderId, amount, onPaymentDetected) => {
         }
     };
 
-    // Bắt đầu kiểm tra ngay lập tức
+    //Start checking immediately
     checkPayment();
 
-    // Sau đó kiểm tra mỗi 30 giây
+    //Then check every 30 seconds
     intervalId = setInterval(checkPayment, 30000);
 
-    // Trả về function để stop monitoring
+    //Return the function to stop monitoring
     return () => {
         clearInterval(intervalId);
     };

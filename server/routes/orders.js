@@ -58,7 +58,7 @@ router.post(`/create`, async (req, res) => {
             });
         }
 
-        // Hàm so sánh sâu 2 mảng classifications
+        //Function for deep comparison of 2 classification arrays
         function isSameClassifications(arr1, arr2) {
             if (!Array.isArray(arr1) && !Array.isArray(arr2)) return true;
             if (!Array.isArray(arr1) || !Array.isArray(arr2)) return false;
@@ -80,7 +80,7 @@ router.post(`/create`, async (req, res) => {
             return true;
         }
 
-        // Hàm so sánh sâu 2 mảng sản phẩm
+        //Function for deep comparison of 2 product arrays
         function isSameProducts(arr1, arr2) {
             if (arr1.length !== arr2.length) return false;
             const sorted1 = [...arr1].sort((a, b) => a.productId.localeCompare(b.productId));
@@ -101,7 +101,7 @@ router.post(`/create`, async (req, res) => {
             return true;
         }
 
-        // Hàm so sánh sâu toàn bộ order
+        //Function for deep comparison of the entire order
         function isSameOrder(orderA, orderB) {
             if (
                 orderA.orderDescription !== orderB.orderDescription ||
@@ -149,7 +149,7 @@ router.post(`/create`, async (req, res) => {
             return res.status(200).json(foundOrder);
         }
 
-        // Nếu không trùng, tạo order mới
+        //If not duplicate, create new order
         const order = new Orders({
             address,
             note,

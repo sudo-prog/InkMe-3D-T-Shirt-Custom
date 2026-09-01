@@ -8,11 +8,11 @@ const { Orders } = require("../models/orders");
 const router = express.Router();
 
 // --- VNPAY ---
-// Đọc cấu hình từ JSON
+//Read configuration from JSON
 const configPath = path.join(__dirname, "../config/vnpay.config.json");
 const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
 
-// Hàm sắp xếp Object theo thứ tự key
+//Function to sort Object by key order
 function sortObject(obj) {
     let sorted = {};
     let keys = Object.keys(obj).sort();
@@ -20,7 +20,7 @@ function sortObject(obj) {
     return sorted;
 }
 
-// API tạo URL thanh toán
+//API to create payment URL
 router.post("/create_payment_url", (req, res) => {
     try {
         const ipAddr =
@@ -31,12 +31,12 @@ router.post("/create_payment_url", (req, res) => {
 
         const { amount, bankCode, orderDescription, orderType, language } = req.body;
 
-        // Kiểm tra dữ liệu đầu vào
+        //Check input data
         if (!amount || isNaN(amount) || amount <= 0) {
-            return res.status(400).json({ message: "Số tiền không hợp lệ" });
+            return res.status(400).json({ message: "Invalid amount" });
         }
         if (!orderDescription || typeof orderDescription !== "string") {
-            return res.status(400).json({ message: "Mô tả đơn hàng không hợp lệ" });
+            return res.status(400).json({ message: "Invalid order description" });
         }
 
         const createDate = new Date().toISOString().replace(/[-:T]/g, "").slice(0, 14);
@@ -60,9 +60,9 @@ router.post("/create_payment_url", (req, res) => {
 
         if (bankCode) vnp_Params["vnp_BankCode"] = bankCode;
 
-        // Sắp xếp và tạo chữ ký
+        //Sort and create signature
         const sortedParams = sortObject(vnp_Params);
-        const signData = new URLSearchParams(sortedParams).toString(); // Thay thế qs.stringify()
+        const signData = new URLSearchParams(sortedParams).toString(); //Replace qs.stringify()
 
         const hmac = crypto.createHmac("sha512", config.vnp_HashSecret);
         const signed = hmac.update(Buffer.from(signData, "utf-8")).digest("hex");
@@ -73,12 +73,12 @@ router.post("/create_payment_url", (req, res) => {
         res.json({ orderId, paymentUrl, createDate });
 
     } catch (error) {
-        console.error("Lỗi tạo URL thanh toán:", error);
-        res.status(500).json({ message: "Lỗi hệ thống" });
+        console.error("Payment URL creation error:", error);
+        res.status(500).json({ message: "System error" });
     }
 });
 
-// Xử lý kết quả giao dịch
+//Process transaction result
 router.get("/vnpay_return", (req, res) => {
     try {
         const vnp_Params = { ...req.query };
@@ -87,9 +87,9 @@ router.get("/vnpay_return", (req, res) => {
         delete vnp_Params["vnp_SecureHash"];
         delete vnp_Params["vnp_SecureHashType"];
 
-        // Sắp xếp và tạo lại chữ ký
+        //Sort and regenerate signature
         const sortedParams = sortObject(vnp_Params);
-        const signData = new URLSearchParams(sortedParams).toString(); // Thay thế qs.stringify()
+        const signData = new URLSearchParams(sortedParams).toString(); //Replace qs.stringify()
 
         const hmac = crypto.createHmac("sha512", config.vnp_HashSecret);
         const signed = hmac.update(Buffer.from(signData, "utf-8")).digest("hex");
@@ -97,16 +97,16 @@ router.get("/vnpay_return", (req, res) => {
         if (secureHash === signed) {
             const isSuccess = vnp_Params["vnp_ResponseCode"] === "00";
             res.json({
-                message: isSuccess ? "Giao dịch thành công" : "Giao dịch thất bại",
+                message: isSuccess ? "Transaction successful" : "Transaction failed",
                 status: isSuccess ? "success" : "failed",
                 data: vnp_Params,
             });
         } else {
-            res.status(400).json({ message: "Chữ ký không hợp lệ", status: "error" });
+            res.status(400).json({ message: "Invalid signature", status: "error" });
         }
     } catch (error) {
-        console.error("Lỗi xử lý kết quả:", error);
-        res.status(500).json({ message: "Lỗi hệ thống" });
+        console.error("Result processing error:", error);
+        res.status(500).json({ message: "System error" });
     }
 });
 

@@ -75,37 +75,37 @@ router.get(`/`, async (req, res) => {
         const perPage = parseInt(req.query.perPage) || 10;
         const totalPosts = await Product.countDocuments();
         const totalPages = Math.ceil(totalPosts / perPage);
-        const sort = req.query.sort || 'menu_order'; // Mặc định sắp xếp theo menu_order
+        const sort = req.query.sort || 'menu_order'; //Default sort by menu_order
 
-        // Xác định tiêu chí sắp xếp
+        //Define sorting criteria
         let sortOption = {};
         switch (sort) {
             case 'menu_order':
-                sortOption = { _id: 1 }; // Sắp xếp mặc định theo _id
+                sortOption = { _id: 1 }; //Default sort by _id
                 break;
             case 'popularity':
-                sortOption = { quantitySold: -1 }; // Bán nhiều nhất trước
+                sortOption = { quantitySold: -1 }; //Best selling first
                 break;
             case 'rating':
-                sortOption = { rating: -1 }; // Đánh giá cao nhất trước
+                sortOption = { rating: -1 }; //Highest rated first
                 break;
             case 'date':
-                sortOption = { dateCreated: -1 }; // Mới nhất trước
+                sortOption = { dateCreated: -1 }; //Newest first
                 break;
             case 'price':
-                sortOption = { price: 1 }; // Giá thấp đến cao
+                sortOption = { price: 1 }; //Price low to high
                 break;
             case 'price-desc':
-                sortOption = { price: -1 }; // Giá cao đến thấp
+                sortOption = { price: -1 }; //Price high to low
                 break;
             case 'discount':
-                sortOption = { discount: -1 }; // Giảm giá cao nhất trước
+                sortOption = { discount: -1 }; //Highest discount first
                 break;
             case 'stock':
-                sortOption = { countInStock: -1 }; // Tồn kho nhiều nhất trước
+                sortOption = { countInStock: -1 }; //Most stock first
                 break;
             default:
-                sortOption = { _id: 1 }; // Mặc định
+                sortOption = { _id: 1 }; //Default
         }
 
         if (page > totalPages) {
@@ -292,10 +292,10 @@ router.get(`/:id`, async (req, res) => {
         const product = await Product.findById(productEditId).populate("category subCat");
 
         if (!product) {
-            return res.status(500).json({ message: "Product ID not found" });  // Dừng xử lý ngay tại đây
+            return res.status(500).json({ message: "Product ID not found" });  //Stop processing right here
         }
 
-        return res.status(200).send(product);  // Gửi phản hồi nếu tìm thấy sản phẩm
+        return res.status(200).send(product);  //Send feedback if product is found
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: "Server Error" });

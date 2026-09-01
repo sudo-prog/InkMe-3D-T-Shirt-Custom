@@ -42,7 +42,7 @@ router.post('/add', async (req, res) => {
             res.status(201).json(cartList);
         } else {
             return res.status(401).json({
-                message: "Sản phẩm đã có trong giỏ hàng",
+                message: "Product is already in the cart",
                 status: false
             });
         }

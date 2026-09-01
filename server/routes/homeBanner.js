@@ -75,7 +75,7 @@ router.get(`/`, async (req, res) => {
         const totalPages = Math.ceil(totalPosts / perPage);
 
         if (page > totalPages) {
-            return res.status(404).json({ message: "Không có dữ liệu" });
+            return res.status(404).json({ message: "No data" });
         }
 
         const HomeBannerList = await HomeBanner.find()

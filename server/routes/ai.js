@@ -9,12 +9,12 @@ router.post("/chat", async (req, res) => {
   const { thread_id, message, images = [] } = req.body;
 
   try {
-    // 1. Tạo hoặc lấy thread
+    //1. Create or get a thread
     const thread = thread_id
       ? await openai.beta.threads.retrieve(thread_id)
       : await openai.beta.threads.create();
 
-    // 2. Upload ảnh nếu có
+    //2. Upload image if any
     const fileIds = [];
     for (const img of images) {
       const buffer = Buffer.from(img.dataUrl.split(",")[1], "base64");
@@ -26,7 +26,7 @@ router.post("/chat", async (req, res) => {
       fileIds.push(upload.id);
     }
 
-    // 3. Gửi message vào thread
+    //3. Send a message to the thread
     await openai.beta.threads.messages.create(thread.id, {
       role: "user",
       content: message,
@@ -36,7 +36,7 @@ router.post("/chat", async (req, res) => {
       })),
     });
 
-    // 4. Tạo "run" để Assistant trả lời, và stream kết quả
+    //4. Create a "run" for the Assistant to respond, and stream the results
     res.setHeader("Content-Type", "text/event-stream");
     res.setHeader("Cache-Control", "no-cache");
     res.setHeader("Connection", "keep-alive");
