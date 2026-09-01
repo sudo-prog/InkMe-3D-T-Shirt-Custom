@@ -33,17 +33,17 @@ const UserInfoCheckout = () => {
             ...prev,
             [field]: value
         }));
-        // Nếu là note thì tự động lưu vào localStorage và gọi API
+        //If it is a note, automatically save to localStorage and call API
         if (field === 'note') {
             const updatedUser = { ...user, note: value };
             localStorage.setItem('user', JSON.stringify(updatedUser));
             setUser(updatedUser);
-            // Gọi API cập nhật note cho user
+            //Call API to update user note
             try {
                 await editData(`/api/user/${user.userId}`, { note: value });
             } catch (err) {
-                // Không cần báo lỗi, chỉ log
-                console.error('Lỗi khi cập nhật note:', err);
+                //No need to report error, only log
+                console.error('Error updating note:', err);
             }
         }
     };
@@ -57,17 +57,17 @@ const UserInfoCheckout = () => {
             }
 
             if (editedUser.name === '') {
-                setError('Họ và tên không được để trống');
+                setError('Full name cannot be left blank');
                 return;
             }
 
             if (editedUser.phone === '' || editedUser.phone.length !== 10) {
-                setError('Số điện thoại không được để trống và phải có 10 chữ số');
+                setError('Phone number cannot be left blank and must have 10 digits');
                 return;
             }
 
             if (editedUser.email === '' || !editedUser.email.includes('@')) {
-                setError('Email không được để trống');
+                setError('Email cannot be left blank');
                 return;
             }
 
@@ -80,14 +80,14 @@ const UserInfoCheckout = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Cập nhật thông tin thành công!",
+                message: "Information updated successfully!",
             });
         } catch (err) {
-            setError('Có lỗi xảy ra khi cập nhật thông tin');
+            setError('An error occurred while updating information');
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Có lỗi xảy ra khi cập nhật thông tin",
+                message: "An error occurred while updating information",
             });
         }
     };
@@ -107,9 +107,7 @@ const UserInfoCheckout = () => {
                         color="primary"
                         onClick={handleEditClick}
                         style={{ marginBottom: '15px' }}
-                    >
-                        Chỉnh sửa
-                    </Button>
+                    >Edit</Button>
                 ) : (
                     <div style={{ marginBottom: '15px' }}>
                         <Button
@@ -117,16 +115,12 @@ const UserInfoCheckout = () => {
                             color="primary"
                             onClick={handleEditUser}
                             style={{ marginRight: '10px' }}
-                        >
-                            Lưu
-                        </Button>
+                        >Save</Button>
                         <Button
                             variant="outlined"
                             color="secondary"
                             onClick={handleCancel}
-                        >
-                            Hủy
-                        </Button>
+                        >Cancel</Button>
                     </div>
                 )}
             </div>
@@ -141,7 +135,7 @@ const UserInfoCheckout = () => {
                         <TextField
                             fullWidth
                             className='checkout-input'
-                            label="Họ và tên"
+                            label="Full name"
                             value={isEditing ? editedUser.name : (user?.name || '')}
                             variant="outlined"
                             onChange={handleInputChange('name')}
@@ -152,7 +146,7 @@ const UserInfoCheckout = () => {
                         <TextField
                             fullWidth
                             className='checkout-input'
-                            label="Số điện thoại"
+                            label="Phone number"
                             value={isEditing ? editedUser.phone : (user?.phone || '')}
                             variant="outlined"
                             onChange={handleInputChange('phone')}

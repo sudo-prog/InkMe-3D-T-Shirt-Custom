@@ -9,7 +9,7 @@ const QRPayment = ({ order }) => {
     const [paymentMessage, setPaymentMessage] = useState('');
     const [stopMonitoring, setStopMonitoring] = useState(null);
 
-    // Lấy orderId từ prop order, fallback về context.orderData?.orderId nếu chưa có
+    //Get orderId from order prop, fallback to context.orderData.orderId if not available
     const orderId = order?.orderId || order?._id || context.orderData?.orderId || '';
 
     const orderData = {
@@ -33,12 +33,12 @@ const QRPayment = ({ order }) => {
 
     const qrCode = `https://img.vietqr.io/image/${orderData.bank}-${orderData.accountNumber}-${orderData.template}?amount=${orderData.amount}&addInfo=${orderData.addInfo}&accountName=${orderData.accountName}`
 
-    // Xử lý khi phát hiện thanh toán thành công
+    //Handle successful payment detection
     const handlePaymentDetected = async (transaction) => {
         setPaymentStatus('paid');
-        setPaymentMessage('Thanh toán thành công! Đơn hàng của bạn đã được xác nhận.');
+        setPaymentMessage('Payment successful! Your order has been confirmed.');
 
-        // Cập nhật trạng thái order trong database
+        //Update order status in database
         try {
             if (order?._id) {
                 await editData(`/api/orders/${order._id}`, {
@@ -47,18 +47,18 @@ const QRPayment = ({ order }) => {
                 });
             }
 
-            // Hiển thị thông báo thành công
+            //Display success notification
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Thanh toán thành công! Đơn hàng đã được xác nhận.",
+                message: "Payment successful! Order has been confirmed.",
             });
         } catch (error) {
             console.error('Error updating order status:', error);
         }
     };
 
-    // Bắt đầu monitoring thanh toán khi component mount
+    //Start payment monitoring when component mounts
     useEffect(() => {
         if (orderId && orderData.amount > 0) {
             const stopFn = startPaymentMonitoring(orderId, orderData.amount, handlePaymentDetected);
@@ -73,7 +73,7 @@ const QRPayment = ({ order }) => {
         };
     }, [orderId, orderData.amount]);
 
-    // Hiển thị nội dung dựa trên trạng thái thanh toán
+    //Display content based on payment status
     if (paymentStatus === 'paid') {
         return (
             <div className='payment-success'
@@ -96,9 +96,7 @@ const QRPayment = ({ order }) => {
                     <button
                         className="btn btn-primary"
                         onClick={() => window.location.href = '/orders'}
-                    >
-                        Xem đơn hàng
-                    </button>
+                    >View order</button>
                 </div>
             </div>
         );
@@ -111,9 +109,7 @@ const QRPayment = ({ order }) => {
            
             <img src={qrCode} alt="QR Code"  />
             <div style={{ marginTop: '15px', textAlign: 'center' }}>
-                <div style={{ fontSize: '20px', color: '#999' }}>
-                    ⏳ Đang kiểm tra thanh toán...
-                </div>
+                <div style={{ fontSize: '20px', color: '#999' }}>⏳ Checking payment.</div>
             </div>
         </div>
     )

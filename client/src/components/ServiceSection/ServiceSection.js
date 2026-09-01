@@ -65,9 +65,8 @@ const ServiceSection = (props) => {
                 <div className="section-title-area">
                     <div className="section-title">
                         {/* <h6 className="wow fadeInUp">More service us</h6> */}
-                        <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                            Bộ Sưu Tập<br />
-                            <span> Bán Chạy Nhất <img src={Shape2} alt="img" /></span>
+                        <h2 className="wow fadeInUp" data-wow-delay=".3s">Collection<br />
+                            <span>Best Selling<img src={Shape2} alt="img" /></span>
                         </h2>
                     </div>
                     <Link onClick={ClickHandler} to="/service" className="theme-btn wow fadeInUp" data-wow-delay=".5s">Xem tất cả</Link>
@@ -81,7 +80,7 @@ const ServiceSection = (props) => {
                                 <div className="service-card-items">
                                     <div className="service-cotent">
                                         <h3><Link onClick={ClickHandler} to={`/service-details/${category.slug}`}>{category.name}</Link></h3>
-                                        <p>{category.description || 'Không có mô tả'}</p>
+                                        <p>{category.description || 'No description'}</p>
                                     </div>
                                     <div className="service-image">
                                         <img src={category.images || 'https://via.placeholder.com/300x200'} alt={category.name}

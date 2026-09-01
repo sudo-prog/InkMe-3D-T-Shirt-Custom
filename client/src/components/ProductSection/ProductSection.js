@@ -28,18 +28,18 @@ const ProductSection = () => {
         try {
 
             if (!user) {
-                toast.error('Vui lòng đăng nhập để thêm vào giỏ hàng');
+                toast.error('Please log in to add to cart');
                 return;
             }
 
-            // Chuẩn bị dữ liệu cho cart item
+            //Preparing data for cart item
             const cartData = {
                 productTitle: product.name,
                 images: product.images,
                 rating: product.rating || "0",
                 price: product.price,
-                quantity: 1, // Số lượng mặc định
-                subTotal: product.price, // Tổng tiền ban đầu
+                quantity: 1, //Default quantity
+                subTotal: product.price, //Original total amount
                 productId: product._id,
                 userId: user.userId,
                 classifications: [{
@@ -54,13 +54,13 @@ const ProductSection = () => {
             const response = await postData('/api/cart/add', cartData);
 
             if (response.status === false) {
-                toast.error(response.message || 'Không thể thêm vào giỏ hàng');
+                toast.error(response.message || 'Unable to add to cart');
             } else {
-                toast.success(`Sản phẩm đã được thêm vào giỏ hàng`);
+                toast.success(`Product has been added to cart`);
             }
         } catch (error) {
             console.error('Error adding to cart:', error);
-            toast.error('Có lỗi xảy ra khi thêm vào giỏ hàng');
+            toast.error('An error occurred while adding to cart');
         }
     };
 
@@ -118,7 +118,7 @@ const ProductSection = () => {
                                     </ul>
                                     <div className="shop-btn">
                                         <button
-                                            onClick={() => handleAddToCart(product)} className="theme-btn">Thêm vào giỏ hàng</button>
+                                            onClick={() => handleAddToCart(product)} className="theme-btn">Add to cart</button>
                                     </div>
                                 </div>
                                 <div className="product-content">
@@ -153,7 +153,7 @@ const ProductSection = () => {
             <div className="container">
                 <div className="section-title text-center">
                     <h6>Digital printing Service</h6>
-                    <h2>Khám Phá Sản Phẩm Nổi Bật🔥</h2>
+                    <h2>Explore Featured Products🔥</h2>
                 </div>
                 <div className="product-header mt-4 mt-md-0">
                     <ul className="nav">
@@ -194,7 +194,7 @@ const ProductSection = () => {
                     </div>
                 </div>
                 <div className="shop-button text-center mt-5 " >
-                    <Link to="/shop" className="theme-btn">Xem tất cả sản phẩm</Link>
+                    <Link to="/shop" className="theme-btn">View all products</Link>
                 </div>
             </div>
         </section>

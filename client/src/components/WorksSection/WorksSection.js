@@ -33,14 +33,12 @@ const WorksSection = (props) => {
                             <div className="about-feature-content">
                                 <div className="section-title">
                                     {/* <h6 className="wow fadeInUp">More about us</h6> */}
-                                    <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                                        Công Nghệ In Áo &
-                                        <span><img src={Ws5} alt="img" />Chất Lượng Mực In</span>
+                                    <h2 className="wow fadeInUp" data-wow-delay=".3s">T-shirt Printing Technology &<span><img src={Ws5} alt="img" />Chất Lượng Mực In</span>
                                     </h2>
                                 </div>
                                 <div className="box-items-area mt-3 mt-md-0">
                                     <div className="box-item wow fadeInUp" data-wow-delay=".3s">
-                                        <h5>🖨️ Công Nghệ In Trực Tiếp (DTG) Hiện Đại</h5>
+                                        <h5>🖨️ Modern Direct-to-Garment (DTG) Printing Technology</h5>
                                         <p>
                                         Sử dụng công nghệ Direct-to-Garment (DTG) – mực được in trực tiếp lên vải, 
                                         cho màu sắc chân thực và độ chi tiết cao.
@@ -48,16 +46,12 @@ const WorksSection = (props) => {
                                         </p>
                                     </div>
                                     <div className="box-item active wow fadeInUp" data-wow-delay=".3s">
-                                        <h5>🎨 Mực In Chất Lượng Cao, An Toàn Cho Da</h5>
-                                        <p>
-                                        Mực in gốc nước thân thiện với môi trường, không gây kích ứng – phù hợp cả với da nhạy cảm và trẻ em.
-                                        </p>
+                                        <h5>🎨 High-Quality Ink, Safe for Skin</h5>
+                                        <p>Eco-friendly water-based inks, non-irritating – suitable for sensitive skin and children.</p>
                                     </div>
                                     <div className="box-item wow fadeInUp" data-wow-delay=".3s">
-                                        <h5>🧼 Dễ Giặt, Không Phai</h5>
-                                        <p>
-                                        Không cần giặt tay. Thiết kế in vẫn giữ nguyên độ sắc nét kể cả khi giặt máy hoặc sấy khô nhẹ.
-                                        </p>
+                                        <h5>🧼 Easy to Wash, No Fading</h5>
+                                        <p>No hand washing required. The print design maintains its sharpness even when machine washed or lightly tumble dried.</p>
                                     </div>
                                 </div>
                             </div>
