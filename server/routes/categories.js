@@ -33,8 +33,8 @@ const upload = multer({
 router.post(`/upload`, upload.array("images"), async (req, res) => {
 
     imagesArray = [];
-    console.log("Received files:", req.files); // Kiểm tra req.files
-    console.log("Request body:", req.body); // Kiểm tra req.body
+    console.log("Received files:", req.files); //Check req.files
+    console.log("Request body:", req.body); //Check req.body
 
 
     try {
@@ -78,7 +78,7 @@ router.get(`/`, async (req, res) => {
         const totalPages = Math.ceil(totalPosts / perPage);
 
         if (page > totalPages) {
-            return res.status(404).json({ message: "Không có dữ liệu" });
+            return res.status(404).json({ message: "No data" });
         }
 
         const categoryList = await Category.find()
