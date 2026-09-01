@@ -122,7 +122,7 @@ const EditCategory = () => {
                     context.setAlterBox({
                         open: true,
                         color: true,
-                        message: "Vui lòng chọn hình ảnh đúng định dạng (jpeg, png, gif, jpg, webp)"
+                        message: "Please choose an image in the correct format (jpeg, png, gif, jpg, webp)"
                     })
                 }
             }
@@ -155,7 +155,7 @@ const EditCategory = () => {
                 context.setAlterBox({
                     open: true,
                     error: false,
-                    message: "Chỉnh sửa danh mục thành công"
+                    message: "Category edited successfully"
                 });
                 setLoading(false);
                 context.fetchCategory();
@@ -178,7 +178,7 @@ const EditCategory = () => {
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0">Chỉnh Sửa danh mục</h5>
+                    <h5 className="mb-0">Edit category</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
@@ -187,12 +187,12 @@ const EditCategory = () => {
                             icon={<HomeIcon fontSize="small" />}
                         />
                         <StyledBreadcrumb
-                            label="Danh mục"
+                            label="Category"
                             component="a"
                             href="#"
                         />
                         <StyledBreadcrumb
-                            label="Chỉnh Sửa danh mục"
+                            label="Edit category"
                         />
                     </Breadcrumbs>
                 </div>
@@ -202,25 +202,25 @@ const EditCategory = () => {
                         <div className="col-md-12">
                             <div className="card shadow p-4 mt-0">
                                 <div className="form-group">
-                                    <h6>Tên danh mục</h6>
+                                    <h6>Category name</h6>
                                     <input type="text" name="name" value={formFields.name}
                                         onChange={changeInput} />
                                 </div>
 
                                 <div className="form-group">
-                                    <h6>Danh mục con</h6>
+                                    <h6>Subcategory</h6>
                                     <input type="text" name="subCat" value={formFields.subCat}
                                         onChange={changeInput} />
                                 </div>
 
                                 <div className="form-group">
-                                    <h6>Màu sắc</h6>
+                                    <h6>Color</h6>
                                     <input type="text" name="color" value={formFields.color}
                                         onChange={changeInput} />
                                 </div>
 
                                 <div className="imageUploadSec">
-                                    <h5 className="mb-4">Thêm ảnh danh mục</h5>
+                                    <h5 className="mb-4">Add category image</h5>
                                     <div className="imgUploadBox d-flex align-items-center">
                                         {
                                             preview?.length !== 0 && preview?.map((img, index) => {
@@ -265,7 +265,7 @@ const EditCategory = () => {
                                 <Button type="submit" className="btn-blue btn-lg btn-big w-100">
                                     <FaCloudUploadAlt /> &nbsp;
                                     {loading === true ? <CircularProgress color='inherit'
-                                        className='loader ml-2' /> : 'Chỉnh sửa danh mục'}
+                                        className='loader ml-2' /> : 'Edit category'}
                                 </Button>
                             </div>
                         </div>

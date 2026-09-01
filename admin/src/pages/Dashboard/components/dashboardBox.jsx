@@ -42,7 +42,7 @@ const DashboardBox = (props) => {
 
             <div className='d-flex w-100 justify-content-between'>
                 <div className="col1">
-                    <h4 className='text-white mb-0'>Số lượng khách hàng</h4>
+                    <h4 className='text-white mb-0'>Number of customers</h4>
                     <span className='text-white'>99</span>
                 </div>
 
@@ -61,7 +61,7 @@ const DashboardBox = (props) => {
             </div>
 
             <div className='d-flex align-items-center justify-content-between w-100 bottomEle'>
-                <h6 className='text-white mb-0 mt-0'>Tháng Trước</h6>
+                <h6 className='text-white mb-0 mt-0'>Last Month</h6>
                 <div className="ml-auto">
                     <Button className='ml-auto toggleIcon' onClick={handleClick}><HiDotsVertical /></Button>
                 </div>
@@ -83,17 +83,13 @@ const DashboardBox = (props) => {
                 >
 
                     <MenuItem onClick={handleClose}>
-                        <IoIosTimer />  Hôm Trước
-                    </MenuItem>
+                        <IoIosTimer />The Day Before</MenuItem>
                     <MenuItem onClick={handleClose}>
-                        <IoIosTimer /> Tuần Trước
-                    </MenuItem>
+                        <IoIosTimer />Last Week</MenuItem>
                     <MenuItem onClick={handleClose}>
-                        <IoIosTimer /> Tháng Trước
-                    </MenuItem>
+                        <IoIosTimer />Last Month</MenuItem>
                     <MenuItem onClick={handleClose}>
-                        <IoIosTimer /> Năm Trước
-                    </MenuItem>
+                        <IoIosTimer />Last Year</MenuItem>
 
                 </Menu>
 

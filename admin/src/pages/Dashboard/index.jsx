@@ -82,7 +82,7 @@ const Dashboard = () => {
       context.setAlterBox({
         open: true,
         error: false,
-        message: "Xóa sản phẩm thành công"
+        message: "Product deleted successfully"
       })
       fetchDataFromApi('/api/products').then((res) => {
         setProductList(res);
@@ -129,24 +129,20 @@ const Dashboard = () => {
                 >
 
                   <MenuItem onClick={handleClose}>
-                    <IoIosTimer />  Hôm Trước
-                  </MenuItem>
+                    <IoIosTimer />The Other Day</MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <IoIosTimer /> Tuần Trước
-                  </MenuItem>
+                    <IoIosTimer />Last Week</MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <IoIosTimer /> Tháng Trước
-                  </MenuItem>
+                    <IoIosTimer />Last Month</MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <IoIosTimer /> Năm Trước
-                  </MenuItem>
+                    <IoIosTimer />Last Year</MenuItem>
 
                 </Menu>
 
               </div>
 
               <h3 className='text-white font-weight-bold'> 10.000.000.000</h3>
-              <p>10.000.000 trong tháng trước</p>
+              <p>10,000,000 last month</p>
 
               <Chart
                 chartType="PieChart"
@@ -162,11 +158,11 @@ const Dashboard = () => {
         </div>
 
         <div className='card shadow border-0 p-3'>
-          <h3 className='hd'>Sản phẩm bán chạy</h3>
+          <h3 className='hd'>Best selling products</h3>
 
           <div className="row cardFilters mt-3">
             <div className="col-md-3">
-              <h4>Sắp xếp theo</h4>
+              <h4>Sort by</h4>
               <FormControl size='small' className='w-100'>
                 <Select
                   value={showBy}
@@ -177,14 +173,14 @@ const Dashboard = () => {
                   className='w-100'
                 >
                   <MenuItem value=""><em>None</em></MenuItem>
-                  <MenuItem value={10}>Tảng</MenuItem>
+                  <MenuItem value={10}>Platform</MenuItem>
                   <MenuItem value={20}>Giá</MenuItem>
                 </Select>
               </FormControl>
             </div>
 
             <div className="col-md-3">
-              <h4>Danh Mục</h4>
+              <h4>Category</h4>
               <FormControl size='small' className='w-100'>
                 <Select
                   value={showBysetCatBy}
@@ -220,16 +216,16 @@ const Dashboard = () => {
               <thead className='thead-dark'>
                 <tr>
                   <th>#ID</th>
-                  <th style={{ width: '250px' }}>Sản Phẩm</th>
-                  <th>Danh Mục</th>
-                  <th>Danh mục con</th>
-                  <th>Nhãn hiệu</th>
+                  <th style={{ width: '250px' }}>Product</th>
+                  <th>Category</th>
+                  <th>Subcategory</th>
+                  <th>Brand</th>
                   <th>Giá bán</th>
-                  <th>Số lượng</th>
-                  <th>Đánh giá</th>
-                  <th>Đặt hàng</th>
-                  <th>Giảm giá</th>
-                  <th>Hành động</th>
+                  <th>Quantity</th>
+                  <th>Review</th>
+                  <th>Order</th>
+                  <th>Discount</th>
+                  <th>Action</th>
                 </tr>
               </thead>
 

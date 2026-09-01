@@ -91,7 +91,7 @@ const EditSubCat = () => {
             context.setAlterBox({
                 open: true,
                 color: true,
-                message: "Vui lòng chọn danh mục gốc"
+                message: "Please select a parent category"
             });
             return false;
         }
@@ -100,7 +100,7 @@ const EditSubCat = () => {
             context.setAlterBox({
                 open: true,
                 color: true,
-                message: "Vui lòng nhập danh mục con"
+                message: "Please enter a subcategory"
             });
             return false;
         }
@@ -110,7 +110,7 @@ const EditSubCat = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Chỉnh sửa danh mục thành công"
+                message: "Subcategory updated successfully"
             });
             setLoading(false);
             history('/subCategory');
@@ -123,7 +123,7 @@ const EditSubCat = () => {
 
         <div className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
-                <h5 className="mb-0">Chỉnh sửa danh mục con</h5>
+                <h5 className="mb-0">Edit subcategory</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                     <StyledBreadcrumb
                         component="a"
@@ -132,12 +132,12 @@ const EditSubCat = () => {
                         icon={<HomeIcon fontSize="small" />}
                     />
                     <StyledBreadcrumb
-                        label="Danh mục con"
+                        label="Subcategory"
                         component="a"
                         href="#"
                     />
                     <StyledBreadcrumb
-                        label="Chỉnh sửa danh mục con"
+                        label="Edit subcategory"
                     />
                 </Breadcrumbs>
             </div>
@@ -149,7 +149,7 @@ const EditSubCat = () => {
                             <div className="row">
                                 <div className="col">
                                     <div className="form-group">
-                                        <h6>Danh mục</h6>
+                                        <h6>Category</h6>
                                         <Select
                                             value={categoryValue}
                                             onChange={handleChangeCategory}
@@ -159,7 +159,7 @@ const EditSubCat = () => {
                                             name="category"
                                         >
                                             <MenuItem value="">
-                                                <em value={null}> -- Chọn danh mục --</em>
+                                                <em value={null}>-- Select category --</em>
                                             </MenuItem>
 
                                             {
@@ -178,7 +178,7 @@ const EditSubCat = () => {
 
                                 <div className="col">
                                     <div className="form-group">
-                                        <h6>Danh mục con</h6>
+                                        <h6>Subcategory</h6>
                                         <input type="text" name="subCat"
                                             value={formFields.subCat} onChange={inputChange} />
                                     </div>
@@ -188,7 +188,7 @@ const EditSubCat = () => {
                             <Button type="submit" className="btn-blue btn-lg btn-big">
                                 <FaCloudUploadAlt /> &nbsp;
                                 {loading === true ? <CircularProgress color='inherit'
-                                    className='loader ml-2' /> : 'Xác Nhận'}
+                                    className='loader ml-2' /> : 'Confirm'}
                             </Button>
                         </div>
                     </div>

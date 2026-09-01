@@ -95,7 +95,7 @@ const Category = () => {
       <div className="right-content w-100">
 
         <div className="card shadow border-0 w-100 flex-row p-4">
-          <h5 className='mb-0 d-flex align-items-center'>Danh sách danh mục sản phẩm</h5>
+          <h5 className='mb-0 d-flex align-items-center'>Product category list</h5>
 
           <div className="ml-auto d-flex align-items-center">
 
@@ -103,18 +103,18 @@ const Category = () => {
               <StyledBreadcrumb
                 component="a"
                 href='#'
-                label="Phân loại"
+                label="Classification"
                 icon={<HomeIcon fontSize="small" />}
               />
 
               <StyledBreadcrumb
-                label="Danh sách danh mục"
+                label="Category list"
                 deleteIcon={<ExpandMoreIcon />}
               />
             </Breadcrumbs>
 
             <Link to="/category/add">
-              <Button className='btn-blue ml-3 pl-3 pr-3'>Thêm Danh Mục</Button>
+              <Button className='btn-blue ml-3 pl-3 pr-3'>Add Category</Button>
             </Link>
 
           </div>
@@ -127,11 +127,11 @@ const Category = () => {
               <thead className='thead-dark'>
                 <tr>
                   <th>#ID</th>
-                  <th style={{ width: '300px' }}>Ảnh</th>
-                  <th>Danh mục</th>
-                  <th>Danh mục con</th>
+                  <th style={{ width: '300px' }}>Photo</th>
+                  <th>Category</th>
+                  <th>Subcategory</th>
                   <th>Màu</th>
-                  <th>Hành động</th>
+                  <th>Action</th>
                 </tr>
               </thead>
 

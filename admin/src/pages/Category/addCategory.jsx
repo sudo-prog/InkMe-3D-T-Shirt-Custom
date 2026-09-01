@@ -86,7 +86,7 @@ const AddCategory = () => {
                     context.setAlterBox({
                         open: true,
                         color: true,
-                        message: "Vui lòng chọn hình ảnh đúng định dạng (jpeg, png, gif, jpg, webp)"
+                        message: "Please choose an image in the correct format (jpeg, png, gif, jpg, webp)"
                     });
                     return false;
                 }
@@ -119,7 +119,7 @@ const AddCategory = () => {
                         context.setAlterBox({
                             open: true,
                             error: false,
-                            message: "Thêm hình ảnh thành công"
+                            message: "Image added successfully"
                         })
                     }, 200);
                 } else {
@@ -138,7 +138,7 @@ const AddCategory = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Xóa hình ảnh thông"
+                message: "Delete image"
             })
         })
 
@@ -188,7 +188,7 @@ const AddCategory = () => {
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0">Thêm danh mục sản phẩm</h5>
+                    <h5 className="mb-0">Add product category</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
@@ -197,12 +197,12 @@ const AddCategory = () => {
                             icon={<HomeIcon fontSize="small" />}
                         />
                         <StyledBreadcrumb
-                            label="Danh mục"
+                            label="Category"
                             component="a"
                             href="#"
                         />
                         <StyledBreadcrumb
-                            label="Thêm danh mục"
+                            label="Add category"
                         />
                     </Breadcrumbs>
                 </div>
@@ -212,19 +212,19 @@ const AddCategory = () => {
                         <div className="col-md-12">
                             <div className="card shadow p-4 mt-0">
                                 <div className="form-group">
-                                    <h6>Tên danh mục</h6>
+                                    <h6>Category name</h6>
                                     <input type="text" name="name" value={formFields.name}
                                         onChange={changeInput} />
                                 </div>
 
                                 <div className="form-group">
-                                    <h6>Màu sắc</h6>
+                                    <h6>Color</h6>
                                     <input type="text" name="color" value={formFields.color}
                                         onChange={changeInput} />
                                 </div>
 
                                 <div className="imageUploadSec">
-                                    <h5 className="mb-4">Thêm ảnh danh mục</h5>
+                                    <h5 className="mb-4">Add category image</h5>
                                     <div className="imgUploadBox d-flex align-items-center">
                                         {
                                             preview?.length !== 0 && preview?.map((img, index) => {
@@ -273,7 +273,7 @@ const AddCategory = () => {
                                 <Button type="submit" className="btn-blue btn-lg btn-big w-100">
                                     <FaCloudUploadAlt /> &nbsp;
                                     {loading === true ? <CircularProgress color='inherit'
-                                        className='loader ml-2' /> : 'Thêm danh mục'}
+                                        className='loader ml-2' /> : 'Add category'}
                                 </Button>
                             </div>
                         </div>
