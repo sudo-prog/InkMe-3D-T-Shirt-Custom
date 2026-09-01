@@ -180,7 +180,7 @@ const Header = (props) => {
                             </div>
                             <div className="header-right d-flex justify-content-end align-items-center">
                                 <SearchComponent />
-                                <h5 className="cart-title"><Link onClick={ClickHandler} to={`/shop-cart/${user.userId}`}>Giỏ hàng <span className='cart-count'>{carts.length}</span></Link></h5>
+                                <h5 className="cart-title"><Link onClick={ClickHandler} to={`/shop-cart/${user.userId}`}>Shopping Cart<span className='cart-count'>{carts.length}</span></Link></h5>
                                 <div className="header__hamburger d-xl-none my-auto">
                                     <div className="sidebar__toggle">
                                         <MobileMenu />

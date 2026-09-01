@@ -49,7 +49,7 @@ const CartPage = () => {
       context.setAlterBox({
         open: true,
         error: false,
-        message: "Xóa sản phẩm thành công"
+        message: "Product deleted successfully"
       });
       fetchCartData();
       context.getCartData();
@@ -96,7 +96,7 @@ const CartPage = () => {
   return (
     <Fragment>
       <NavbarS2 hclass={'header-section-2 style-two'} />
-      <PageTitle pageTitle={''} pagesub={'Giỏ hàng'} />
+      <PageTitle pageTitle={''} pagesub={'Shopping cart'} />
 
       <section className="cart-section section-padding section-bg-2">
         <div className="container">
@@ -108,10 +108,10 @@ const CartPage = () => {
                     <table>
                       <thead>
                         <tr>
-                          <th>Sản phẩm</th>
+                          <th>Product</th>
                           <th>Giá</th>
-                          <th>Số lượng</th>
-                          <th>Tổng cộng</th>
+                          <th>Quantity</th>
+                          <th>Total</th>
                           <th></th>
                         </tr>
                       </thead>
@@ -161,7 +161,7 @@ const CartPage = () => {
                           })
                         ) : (
                           <tr>
-                            <td colSpan="5" className="text-center">Giỏ hàng trống</td>
+                            <td colSpan="5" className="text-center">Empty cart</td>
                           </tr>
                         )}
                       </tbody>
@@ -169,9 +169,9 @@ const CartPage = () => {
                   </div>
                   <div className="cart-wrapper-footer">
                     <form>
-                      <input type="text" name="promo-code" id="promoCode" placeholder="Mã giảm giá" />
+                      <input type="text" name="promo-code" id="promoCode" placeholder="Discount code" />
                       <button type="submit" className="theme-btn">
-                        <span>Áp dụng</span>
+                        <span>Apply</span>
                       </button>
                     </form>
 
@@ -184,18 +184,18 @@ const CartPage = () => {
               <div className="col-xl-6">
                 <div className="cart-pragh-box">
                   <div className="cart-graph">
-                    <h4>Tổng giỏ hàng</h4>
+                    <h4>Cart total</h4>
                     <ul>
                       <li>
-                        <span>Tạm tính</span>
+                        <span>Subtotal</span>
                         <span>{formatCurrency(totalAmount)}</span>
                       </li>
                       <li>
-                        <span>Phí vận chuyển</span>
-                        <span>Miễn phí</span>
+                        <span>Shipping fee</span>
+                        <span>Free</span>
                       </li>
                       <li>
-                        <span>Tổng cộng</span>
+                        <span>Total</span>
                         <span>{formatCurrency(totalAmount)}</span>
                       </li>
                     </ul>
