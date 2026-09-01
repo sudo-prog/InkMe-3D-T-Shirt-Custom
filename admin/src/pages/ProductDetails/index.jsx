@@ -82,21 +82,21 @@ const ProductDetails = () => {
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0">Thông tin sản phẩm</h5>
+                    <h5 className="mb-0">Product information</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ms-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
                             href="#"
-                            label="Quản lý"
+                            label="Management"
                             icon={<HomeIcon fontSize="small" />}
                         />
                         <StyledBreadcrumb
-                            label="Sản phẩm"
+                            label="Product"
                             component="a"
                             href="#"
                         />
                         <StyledBreadcrumb
-                            label="Thông tin sản phẩm"
+                            label="Product information"
                         />
                     </Breadcrumbs>
                 </div>
@@ -105,7 +105,7 @@ const ProductDetails = () => {
                     <div className="row">
                         <div className="col-md-5">
                             <div className="sliderWrapper pt-3 pb-3 ps-4 pe-4">
-                                <h6 className="mb-3">Ảnh sản phẩm</h6>
+                                <h6 className="mb-3">Product images</h6>
                                 <Slider {...ProductSliderOptions} ref={productSliderBig}
                                     className="sliderBig mb-2">
                                     {
@@ -136,14 +136,14 @@ const ProductDetails = () => {
                         </div>
                         <div className="col-md-7">
                             <div className="pt-3 pb-3 ps-4 pe-4">
-                                <h6 className="mb-3">Thông tin chi tiết</h6>
+                                <h6 className="mb-3">Details</h6>
                                 <h4>{productData?.name}</h4>
 
                                 <div className="productInfo mt-3">
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><MdBrandingWatermark /></span>
-                                            <span className="name">Thương hiệu</span>
+                                            <span className="name">Brand</span>
                                         </div>
 
                                         <div className="col-md-9 ">
@@ -154,7 +154,7 @@ const ProductDetails = () => {
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><BiSolidCategoryAlt /></span>
-                                            <span className="name">Phân loại</span>
+                                            <span className="name">Classification</span>
                                         </div>
 
                                         <div className="col-md-9 ">
@@ -188,23 +188,23 @@ const ProductDetails = () => {
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><BiSolidCategoryAlt /></span>
-                                            <span className="name">Màu sắc</span>
+                                            <span className="name">Color</span>
                                         </div>
 
                                         <div className="col-md-9 ">
                                             :<span>
                                                 <ul className="list list-inline tags sml">
                                                     <li className="list-inline-item">
-                                                        <span>Đỏ</span>
+                                                        <span>Red</span>
                                                     </li>
                                                     <li className="list-inline-item">
-                                                        <span>Trắng</span>
+                                                        <span>White</span>
                                                     </li>
                                                     <li className="list-inline-item">
                                                         <span>Xanh</span>
                                                     </li>
                                                     <li className="list-inline-item">
-                                                        <span>Đen</span>
+                                                        <span>Black</span>
                                                     </li>
                                                     <li className="list-inline-item">
                                                         <span>Vàng</span>
@@ -217,7 +217,7 @@ const ProductDetails = () => {
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><BiSolidCategoryAlt /></span>
-                                            <span className="name">Kích cỡ</span>
+                                            <span className="name">Size</span>
                                         </div>
 
                                         <div className="col-md-9 ">
@@ -251,7 +251,7 @@ const ProductDetails = () => {
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><BiSolidCategoryAlt /></span>
-                                            <span className="name">Số lượng</span>
+                                            <span className="name">Quantity</span>
                                         </div>
 
                                         <div className="col-md-9 ">
@@ -262,18 +262,18 @@ const ProductDetails = () => {
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><BiSolidCategoryAlt /></span>
-                                            <span className="name">Đánh giá</span>
+                                            <span className="name">Review</span>
                                         </div>
 
                                         <div className="col-md-9 ">
-                                            :<span>({reviewData?.length}) Đánh giá</span>
+                                            :<span>({reviewData.length}) Reviews</span>
                                         </div>
                                     </div>
 
                                     <div className="row">
                                         <div className="col-md-3 d-flex align-items-center">
                                             <span className="icon"><BiSolidCategoryAlt /></span>
-                                            <span className="name">Ngày đăng</span>
+                                            <span className="name">Posting date</span>
                                         </div>
 
                                         <div className="col-md-9 ">
@@ -286,16 +286,12 @@ const ProductDetails = () => {
                     </div>
 
                     <div className="p-4">
-                        <h5 className="mt-4 mb-3">
-                            Mô tả sản phẩm
-                        </h5>
+                        <h5 className="mt-4 mb-3">Product description</h5>
                         <p>
                             {productData?.description}
                         </p>
 
-                        <h5 className="mt-4 mb-3">
-                            Đánh giá sản phẩm
-                        </h5>
+                        <h5 className="mt-4 mb-3">Product review</h5>
 
                         <div className="ratingSection">
                             <div className="ratingrow d-flex align-items-center">
@@ -384,9 +380,7 @@ const ProductDetails = () => {
                         {
                             reviewData?.length > 0 &&
                             <>
-                                <h5 className="mt-4 mb-3">
-                                    Phản hồi của khách hàng
-                                </h5>
+                                <h5 className="mt-4 mb-3">Customer feedback</h5>
 
                                 <div className="reviewsSection">
 
@@ -398,89 +392,98 @@ const ProductDetails = () => {
                                                         <div className="col-sm-7 d-flex">
                                                             <div className="d-flex flex-column">
                                                                 <div className="userInfo d-flex align-items-center">
-                                                                    <UserAvatarImgComponent
-                                                                        img='https://mironcoder-hotash.netlify.app/images/avatar/01.webp' lg={true}
-                                                                    />
+                                                                    <UserAvatar<div className="">
+ <div className="">
+ <div className="">
+ <div className="">
+ <div className="">
+ <UserAvatarImgComponent
+ Img='' lg={true}
+ />
 
-                                                                    <div className="info ps-3">
-                                                                        <h6>{item?.customerName}</h6>
-                                                                        <span>{item?.dateCreated}</span>
-                                                                    </div>
-                                                                </div>
-                                                                <Rating name="read-only" value={parseInt(item?.customerRating)} readOnly />
-                                                            </div>
-                                                        </div>
+ <div className="">
+ <h6>Nguyen Van A</h6>
+ <span>25 minutes ago</span>
+ </div>
+ </div>
+ <Rating name="" value={4.5} precision={0.5} readOnly />
+ </div>
+ </div>
 
-                                                        <div className="col-sm-5 d-flex align-items-center">
-                                                            <div className="ms-auto">
-                                                                <Button className="btn-blue btn-big btn-lg ms-auto"><FaReply /> &nbsp; Trả lời</Button>
-                                                            </div>
-                                                        </div>
+ <div className="">
+ <div className="">
+ <Button className=""><FaReply /> &nbsp; Reply</Button>
+ </div>
+ </div>
 
-                                                        <p className="mt-3">{item?.review} </p>
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
+ <p className="">Lorem Ipsum is dummy text of printing and typesetting industry.
+ Lorem Ipsum has been industry's standard dummy text ever since the 1500s,
+ When unknown printer took galley of type and scrambled it to make type specimen book.
+ </p>
+ </div>
+ </div>
 
-                                    }
-                                </div>
-                            </>
-                        }
+ <div className="">
+ <div className="">
+ <div className="">
+ <div className="">
+ <div className="">
+ <UserAvatarImgComponent
+ Img='' lg={true}
+ />
 
-                        {/* <div className="reviewsRow reply">
-                                <div className="row">
-                                    <div className="col-sm-7 d-flex">
-                                        <div className="d-flex flex-column">
-                                            <div className="userInfo d-flex align-items-center">
-                                                <UserAvatarImgComponent
-                                                    img='https://mironcoder-hotash.netlify.app/images/avatar/01.webp' lg={true}
-                                                />
+ <div className="">
+ <h6>Nguyen Van A</h6>
+ <span>25 minutes ago</span>
+ </div>
+ </div>
+ <Rating name="" value={4.5} precision={0.5} readOnly />
+ </div>
+ </div>
 
-                                                <div className="info ps-3">
-                                                    <h6>Nguyen Van A</h6>
-                                                    <span>25 phút trước</span>
-                                                </div>
-                                            </div>
-                                            <Rating name="read-only" value={4.5} precision={0.5} readOnly />
-                                        </div>
-                                    </div>
+ <div className="">
+ <div className="">
+ <Button className=""><FaReply /> &nbsp; Reply</Button>
+ </div>
+ </div>
 
-                                    <div className="col-sm-5 d-flex align-items-center">
-                                        <div className="ms-auto">
-                                            <Button className="btn-blue btn-big btn-lg ms-auto"><FaReply /> &nbsp; Trả lời</Button>
-                                        </div>
-                                    </div>
+ <p className="">Lorem Ipsum is dummy text of printing and typesetting industry.
+ Lorem Ipsum has been industry's standard dummy text ever since the 1500s,
+ When unknown printer took galley of type and scrambled it to make type specimen book.
+ </p>
+ </div>
+ </div>
 
-                                    <p className="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    </p>
-                                </div>
-                            </div>
+ <div className="">
+ <div className="">
+ <div className="">
+ <div className="">
+ <div className="">
+ <UserAvatarImgComponent
+ Img='' lg={true}
+ />
 
-                            <div className="reviewsRow reply">
-                                <div className="row">
-                                    <div className="col-sm-7 d-flex">
-                                        <div className="d-flex flex-column">
-                                            <div className="userInfo d-flex align-items-center">
-                                                <UserAvatarImgComponent
-                                                    img='https://mironcoder-hotash.netlify.app/images/avatar/01.webp' lg={true}
-                                                />
+ <div className="">
+ <h6>Nguyen Van A</h6>
+ <span>25 minutes ago</span>
+ </div>
+ </div>
+ <Rating name="" value={4.5} precision={0.5} readOnly />
+ </div>
+ </div>
 
-                                                <div className="info ps-3">
-                                                    <h6>Nguyen Van A</h6>
-                                                    <span>25 phút trước</span>
-                                                </div>
-                                            </div>
-                                            <Rating name="read-only" value={4.5} precision={0.5} readOnly />
-                                        </div>
-                                    </div>
+ <div className="">
+ <div className="">
+ <Button className=""><FaReply /> &nbsp; Reply</Button>
+ </div>
+ </div>
 
-                                    <div className="col-sm-5 d-flex align-items-center">
-                                        <div className="ms-auto">
-                                            <Button className="btn-blue btn-big btn-lg ms-auto"><FaReply /> &nbsp; Trả lời</Button>
-                                        </div>
+ <p className="">Lorem Ipsum is dummy text of printing and typesetting industry.
+ Lorem Ipsum has been industry's standard dummy text ever since the 1500s,
+ When unknown printer took galley of type and scrambled it to make type specimen book.
+ </p>
+ </div>
+ </div>                                </div>
                                     </div>
 
                                     <p className="mt-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -501,7 +504,7 @@ const ProductDetails = () => {
 
                                                 <div className="info ps-3">
                                                     <h6>Nguyen Van A</h6>
-                                                    <span>25 phút trước</span>
+                                                    <span>25 minutes ago</span>
                                                 </div>
                                             </div>
                                             <Rating name="read-only" value={4.5} precision={0.5} readOnly />
@@ -510,7 +513,7 @@ const ProductDetails = () => {
 
                                     <div className="col-sm-5 d-flex align-items-center">
                                         <div className="ms-auto">
-                                            <Button className="btn-blue btn-big btn-lg ms-auto"><FaReply /> &nbsp; Trả lời</Button>
+                                            <Button className="btn-blue btn-big btn-lg ms-auto"><FaReply />&nbsp; Reply</Button>
                                         </div>
                                     </div>
 

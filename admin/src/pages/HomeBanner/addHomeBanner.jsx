@@ -84,7 +84,7 @@ const AddHomeBanner = () => {
                     context.setAlterBox({
                         open: true,
                         color: true,
-                        message: "Vui lòng chọn hình ảnh đúng định dạng (jpeg, png, gif, jpg, webp)"
+                        message: "Please choose an image with the correct format (jpeg, png, gif, jpg, webp)"
                     });
                     return false;
                 }
@@ -116,7 +116,7 @@ const AddHomeBanner = () => {
                         context.setAlterBox({
                             open: true,
                             error: false,
-                            message: "Thêm hình ảnh thành công"
+                            message: "Image added successfully"
                         })
                     }, 200);
                 }
@@ -133,7 +133,7 @@ const AddHomeBanner = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Xóa hình ảnh thông"
+                message: "Delete image"
             })
         })
 
@@ -181,7 +181,7 @@ const AddHomeBanner = () => {
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0">Thêm ảnh Banner</h5>
+                    <h5 className="mb-0">Add Banner image</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
@@ -206,7 +206,7 @@ const AddHomeBanner = () => {
                             <div className="card shadow p-4 mt-0">
 
                                 <div className="imageUploadSec">
-                                    <h5 className="mb-4">Thêm ảnh Banner</h5>
+                                    <h5 className="mb-4">Add Banner image</h5>
                                     <div className="imgUploadBox d-flex align-items-center">
                                         {
                                             preview?.length !== 0 && preview?.map((img, index) => {

@@ -113,7 +113,7 @@ const Login = () => {
         <div className="loginBox">
           <div className="logo text-center">
             <img src={Logo} alt="logo" width="60px" />
-            <h5 className="">Đăng nhập</h5>
+            <h5 className="">Log in</h5>
           </div>
 
           <div className="wrapper mt-3 card border">
@@ -129,7 +129,7 @@ const Login = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Tên đăng nhập"
+                  placeholder="Username"
                   onFocus={() => focusInput(0)}
                   onBlur={() => setInputIndex(null)}
                   autoFocus
@@ -149,7 +149,7 @@ const Login = () => {
                 <input
                   type={`${isShowPassword === true ? "text" : "password"}`}
                   className="form-control"
-                  placeholder="Điền mật khẩu"
+                  placeholder="Enter password"
                   onFocus={() => focusInput(1)}
                   onBlur={() => setInputIndex(null)}
                   name="password"
@@ -166,7 +166,7 @@ const Login = () => {
 
               <div className="form-group">
                 <Button type="submit" className="btn-blue btn-big w-100">
-                  {loading === true ? <CircularProgress /> : "Đăng Nhập"}
+                  {loading === true ? <CircularProgress /> : "Log In"}
                 </Button>
               </div>
 
@@ -176,7 +176,7 @@ const Login = () => {
                 </Link>
                 <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
                   <span className="line"></span>
-                  <span className="txt">hoặc</span>
+                  <span className="txt">Or</span>
                   <span className="line"></span>
                 </div>
 
@@ -192,9 +192,7 @@ const Login = () => {
           </div>
 
           <div className="wrapper mt-3 card border footer">
-            <span className="text-center">
-              Bạn chưa có tài khoản?{" "}
-              <Link to={"/signup"} className="link color">
+            <span className="text-center">Don't have an account?{" "}<Link to={"/signup"} className="link color">
                 Đăng ký
               </Link>
             </span>
