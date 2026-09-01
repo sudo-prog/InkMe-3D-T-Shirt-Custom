@@ -20,10 +20,7 @@ const ProcessSection = () => {
                             <img src={Ps2} alt="img" />
                         </div>
                         <div className="feature-content">
-                            <h5>
-                                Cửa hàng in ấn đã<br />
-                                được chứng nhận
-                            </h5>
+                            <h5>Printing shop has<br />certified</h5>
                         </div>
                     </div>
                     <div className="feature-item wow fadeInUp" data-wow-delay=".4s">
@@ -32,9 +29,7 @@ const ProcessSection = () => {
                         </div>
                         <div className="feature-content">
                             <h5>
-                                Giao hàng nhanh trong <br />
-                                10 ngày làm việc
-                            </h5>
+                                Giao hàng nhanh trong <br />10 working days</h5>
                         </div>
                     </div>
                     <div className="feature-item wow fadeInUp" data-wow-delay=".6s">
@@ -42,10 +37,7 @@ const ProcessSection = () => {
                             <img src={Ps4} alt="img" />
                         </div>
                         <div className="feature-content">
-                            <h5>
-                                In Ấn Uy Tín<br />
-                                Chất Lượng Bền Lâu
-                            </h5>
+                            <h5>Reputable Printing<br />Durable Quality</h5>
                         </div>
                     </div>
                     <div className="feature-item wow fadeInUp" data-wow-delay=".7s">
@@ -53,10 +45,7 @@ const ProcessSection = () => {
                             <img src={Ps5} alt="img" />
                         </div>
                         <div className="feature-content">
-                            <h5>
-                                Linh Hoạt Số Lượng <br />
-                                Không Ép Buộc
-                            </h5>
+                            <h5>Flexible Quantity<br />No Obligation</h5>
                         </div>
                     </div>
                     <div className="feature-item wow fadeInUp" data-wow-delay=".8s">
@@ -64,10 +53,7 @@ const ProcessSection = () => {
                             <img src={Ps6} alt="img" />
                         </div>
                         <div className="feature-content">
-                            <h5>
-                                Quy Trình Số Hoá<br />
-                                Thiết Kế Dễ Dàng
-                            </h5>
+                            <h5>Digitization Process<br />Easy Design</h5>
                         </div>
                     </div>
                 </div>

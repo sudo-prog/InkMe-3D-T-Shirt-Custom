@@ -13,12 +13,12 @@ const HeaderTopbarS2 = () => {
         <div className="container-fluid">
             <div className="header-top-wrapper-2">
                 <div className="coming-soon">
-                    <h5>Siêu ưu đãi 30%</h5>
+                    <h5>Super offer 30%</h5>
                     <CountdownTimer />
                     <Link onClick={ClickHandler} to="/shop" className="theme-btn"> Mua sắm ngay</Link>
                 </div>
                 <div className="header-top-right-2">
-                    <h6><i className="fas fa-truck"></i> Theo dõi đơn hàng</h6>
+                    <h6><i className="fas fa-truck"></i>Track order</h6>
                     <div className="social-icon d-flex align-items-center">
                         <Link onClick={ClickHandler} to="#"><i className="fab fa-facebook-f"></i></Link>
                         <Link onClick={ClickHandler} to="#"><i className="fab fa-twitter"></i></Link>
@@ -27,8 +27,8 @@ const HeaderTopbarS2 = () => {
                     </div>
                     <div className="flag-wrap">
                         <select className='nice-select'>
-                            <option>Tiếng Việt</option>
-                            <option>Tiếng Anh</option>
+                            <option>Vietnamese</option>
+                            <option>English</option>
                         </select>
                     </div>
                 </div>

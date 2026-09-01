@@ -43,26 +43,18 @@ const PortfolioSection = () => {
                         <div className="col-xl-6">
                             <div className="portfolio-content">
                                 <div className="section-title">
-                                    <h6 className="wow fadeInUp">Dự án nổi bật</h6>
-                                    <h2 className="wow fadeInUp" data-wow-delay=".3s">
-                                        Khám phá một số dự án mà chúng tôi đã thực hiện cho doanh nghiệp!
-                                    </h2>
+                                    <h6 className="wow fadeInUp">Featured Projects</h6>
+                                    <h2 className="wow fadeInUp" data-wow-delay=".3s">Discover some of the projects we have completed for businesses!</h2>
                                 </div>
                                 <ul className="list-items mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
                                     <li>
-                                        <i className="fa-regular fa-check"></i>
-                                        In Ấn Đặc Biệt Theo Yêu Cầu
-                                    </li>
+                                        <i className="fa-regular fa-check"></i>Specialized Printing on Request</li>
                                     <li>
-                                        <i className="fa-regular fa-check"></i>
-                                        Giải Pháp In Ấn Doanh Nghiệp
-                                    </li>
+                                        <i className="fa-regular fa-check"></i>Enterprise Printing Solutions</li>
                                     <li>
-                                        <i className="fa-regular fa-check"></i>
-                                        Đơn Hàng Tuỳ Chỉnh
-                                    </li>
+                                        <i className="fa-regular fa-check"></i>Custom Orders</li>
                                 </ul>
-                                <Link to="/shop" className="theme-btn wow fadeInUp" data-wow-delay=".3s">Liên Hệ Ngay</Link>
+                                <Link to="/shop" className="theme-btn wow fadeInUp" data-wow-delay=".3s">Contact Now</Link>
                             </div>
                         </div>
                         <div className="col-xl-6">
