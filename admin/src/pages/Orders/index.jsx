@@ -58,7 +58,7 @@ const Orders = () => {
                     }));
                     setOrders(formattedOrders);
                 }
-            }).catch((error) => console.error("Lỗi tải đơn hàng:", error));
+            }).catch((error) => console.error("Order loading error:", error));
     }, []);
 
     const handleOpenProducts = (products) => {
@@ -73,10 +73,10 @@ const Orders = () => {
 
     const getStatusColor = (status) => {
         switch (status.toLowerCase()) {
-            case "pending": return { color: "warning", label: "Chờ xử lý" }; // Màu vàng
+            case "pending": return { color: "warning", label: "Pending" }; // Màu vàng
             case "success": return { color: "success", label: "Thành công" }; // Màu xanh lá
-            case "failed": return { color: "error", label: "Thất bại" }; // Màu đỏ
-            default: return { color: "default", label: "Không xác định" };
+            case "failed": return { color: "error", label: "Failed" }; //Red
+            default: return { color: "default", label: "Unknown" };
         }
     };
 
@@ -119,9 +119,9 @@ const Orders = () => {
 
                                     setOrders(formattedOrders);
                                 }
-                            }).catch((error) => console.error("Lỗi tải đơn hàng:", error));
+                            }).catch((error) => console.error("Order loading error:", error));
                     
-                }).catch((error) => console.error("Lỗi tạo đơn hàng:", error));
+                }).catch((error) => console.error("Order creation error:", error));
         })
     };
 
@@ -129,7 +129,7 @@ const Orders = () => {
         { field: 'id', headerName: 'OrderId', width: 100 },
         {
             field: "productCount",
-            headerName: "Số lượng sản phẩm",
+            headerName: "Product quantity",
             width: 145,
             renderCell: (params) => (
                 <Button variant="contained" color="primary" onClick={() => handleOpenProducts(params.row.products)}>
@@ -137,12 +137,12 @@ const Orders = () => {
                 </Button>
             ),
         },
-        { field: 'fullName', headerName: 'Họ và tên', width: 130 },
+        { field: 'fullName', headerName: 'Full name', width: 130 },
         {
             field: 'phoneNumber',
             description: 'Phone Number',
             sortable: false,
-            headerName: 'Số điện thoại', width: 130
+            headerName: 'Phone number', width: 130
         },
         {
             field: 'email',
@@ -154,22 +154,22 @@ const Orders = () => {
             field: 'address',
             description: 'Address',
             sortable: false,
-            headerName: 'Địa chỉ', width: 130
+            headerName: 'Address', width: 130
         },
         {
             field: 'amount',
-            headerName: 'Giá trị đơn hàng',
+            headerName: 'Order value',
             type: 'number',
             width: 130,
         },
         {
             field: 'dateCreated',
-            headerName: 'Ngày tạo',
+            headerName: 'Created date',
             width: 130
         },
         {
             field: "status",
-            headerName: "Trạng thái",
+            headerName: "Status",
             width: 150,
             renderCell: (params) => (
                 <Select
@@ -184,9 +184,9 @@ const Orders = () => {
                         borderRadius: "5px",
                     }}
                 >
-                    <MenuItem value="pending">Chờ xử lý</MenuItem>
+                    <MenuItem value="pending">Pending</MenuItem>
                     <MenuItem value="success">Thành công</MenuItem>
-                    <MenuItem value="failed">Thất bại</MenuItem>
+                    <MenuItem value="failed">Failed</MenuItem>
                 </Select>
             ),
         },
@@ -206,15 +206,14 @@ const Orders = () => {
 
         <div className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
-                <h5 className='mb-0 d-flex align-items-center'>Danh sách đơn hàng</h5>
+                <h5 className='mb-0 d-flex align-items-center'>Order list</h5>
 
                 <div className="ml-auto d-flex align-items-center">
 
                     <Breadcrumbs aria-label='breadcrumb' className='ml-auto breadcrumbs_' >
                         <StyledBreadcrumb
                             component="a"
-                            href='#'
-                            label="Đơn hàng"
+                            href=Dialog displaying product listl="Order"
                             icon={<FaCartArrowDown fontSize="small" />}
                             deleteIcon={<ExpandMoreIcon />}
                         />
@@ -240,20 +239,28 @@ const Orders = () => {
 
                             {/* Dialog hiển thị danh sách sản phẩm */}
                             <Dialog open={open} onClose={handleClose}>
-                                <DialogTitle>Danh sách sản phẩm</DialogTitle>
-                                <DialogContent>
-                                    <List>
-                                        {selectedProducts.map((product, index) => (
-                                            <ListItem key={index}>
-                                                <img src={product.images[0]} alt="Product" width="50" height="50" style={{ marginRight: 10 }} />
-                                                <ListItemText primary={`Sản phẩm: ${product.productTitle}`} secondary={`Số lượng: ${product.quantity}`} />
-                                            </ListItem>
-                                        ))}
-                                    </List>
-                                </DialogContent>
-                                <DialogActions>
-                                    <Button onClick={handleClose} color="primary">Đóng</Button>
-                                </DialogActions>
+                               <div className="">
+ <table className="">
+ <thead>
+ <tr>
+ <th scope="">No.</th>
+ <th scope="">ID</th>
+ <th scope="">Total amount</th>
+ <th scope="">Status</th>
+ <th scope="">Action</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <th scope="">1</th>
+ <td>1</td>
+ <td>100,000</td>
+ <td>Pending</td>
+ <td><button className="">Details</button></td>
+ </tr>
+ </tbody>
+ </table>
+ </div>          </DialogActions>
                             </Dialog>
                         </Paper>
                         {/* <div className="table-responsive">
@@ -262,7 +269,7 @@ const Orders = () => {
                             <tr>
                                 <th scope="col">STT</th>
                                 <th scope="col">ID</th>
-                                <th scope="col">Tổng tiền</th>
+                                <th scope="col">Total amount</th>
                                 <th scope="col">Trạng thái</th>
                                 <th scope="col">Thao tác</th>
                             </tr>
@@ -272,8 +279,8 @@ const Orders = () => {
                                 <th scope="row">1</th>
                                 <td>1</td>
                                 <td>100.000</td>
-                                <td>Chưa xu ly</td>
-                                <td><button className="btn btn-primary">Chi tiết</button></td>
+                                <td>Pending</td>
+                                <td><button className="btn btn-primary">Details</button></td>
                             </tr>
                         </tbody>
                     </table>

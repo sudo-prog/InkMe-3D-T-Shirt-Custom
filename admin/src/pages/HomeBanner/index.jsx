@@ -58,7 +58,7 @@ const HomeBanner = () => {
 
     const [lightboxIndex, setLightboxIndex] = useState(0);
 
-    // Tạo danh sách ảnh cho Lightbox
+    //Create photo list for Lightbox
     const slides = homeBannerData?.HomeBannerList?.map(item => ({
         src: item.images[0],
     })) || [];
@@ -129,8 +129,8 @@ const HomeBanner = () => {
                             <thead className='thead-dark'>
                                 <tr>
                                     <th style={{ width: '10%' }}>#ID</th>
-                                    <th style={{ width: '60%' }}>Ảnh</th>
-                                    <th>Hành động</th>
+                                    <th style={{ width: '60%' }}>Photo</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
 

@@ -142,7 +142,7 @@ const EditProduct = () => {
             typeof value === 'string' ? value.split(',') : value,
         );
 
-        // Cập nhật formFields với mảng productRams mới
+        //Update formFields with new productRams array
         setformFields((prevFields) => ({
             ...prevFields,
             productRams: typeof value === 'string' ? value.split(',') : value,
@@ -165,7 +165,7 @@ const EditProduct = () => {
             typeof value === 'string' ? value.split(',') : value,
         );
 
-        // Cập nhật formFields với mảng productSize mới
+        //Update formFields with new productSize array
         setformFields((prevFields) => ({
             ...prevFields,
             productSize: typeof value === 'string' ? value.split(',') : value,
@@ -268,7 +268,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Xóa hình ảnh thành công"
+                message: "Image deleted successfully"
             })
         })
 
@@ -303,7 +303,7 @@ const EditProduct = () => {
                     context.setAlterBox({
                         open: true,
                         color: true,
-                        message: "Vui lòng chọn hình ảnh đúng định dạng (jpeg, png, gif, jpg, webp)"
+                        message: "Please choose an image in the correct format (jpeg, png, gif, jpg, webp)"
                     });
                     return false;
                 }
@@ -336,7 +336,7 @@ const EditProduct = () => {
                         context.setAlterBox({
                             open: true,
                             error: false,
-                            message: "Thêm hình ảnh thành công"
+                            message: "Image added successfully"
                         })
                     }, 200);
                 }
@@ -377,7 +377,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng nhập tên sản phẩm"
+                message: "Please enter the product name"
             });
             setLoading(false);
             return false;
@@ -387,7 +387,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng nhập mô tả sản phẩm"
+                message: "Please enter the product description"
             });
             setLoading(false);
             return false;
@@ -397,7 +397,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng chọn danh mục sản phẩm"
+                message: "Please select a product category"
             });
             setLoading(false);
             return false;
@@ -407,7 +407,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng nhập giá sản phẩm là số lớn hơn 0 và không chứa ký tự đặc biệt hoặc chữ"
+                message: "Please enter the product price as a number greater than 0 and without special characters or letters"
             });
             setLoading(false);
             return false;
@@ -417,7 +417,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng nhập giá cũ sản phẩm là số lớn hơn 0 và không chứa ký tự đặc biệt hoặc chữ"
+                message: "Please enter the old product price as a number greater than 0 and without special characters or letters"
             });
             setLoading(false);
             return false;
@@ -427,7 +427,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng nhập đầy đủ thông tin"
+                message: "Please enter all the information"
             });
             setLoading(false);
             return false;
@@ -437,7 +437,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: true,
-                message: "Vui lòng nhập số lượng sản phẩm"
+                message: "Please enter the product quantity"
             });
             setLoading(false);
             return false;
@@ -448,8 +448,7 @@ const EditProduct = () => {
         //     context.setAlterBox({
         //         open: true,
         //         error: true,
-        //         message: "Vui lòng chọn ít nhất một hình ảnh"
-        //     });
+        //Message: "Please select at least one image"       //     });
         //     setLoading(false);
         //     return false;
         // }
@@ -459,7 +458,7 @@ const EditProduct = () => {
             context.setAlterBox({
                 open: true,
                 error: false,
-                message: "Chỉnh sửa sản phẩm thành công"
+                message: "Product edited successfully"
             });
 
             setLoading(false);
@@ -490,21 +489,21 @@ const EditProduct = () => {
         <>
             <div className="right-content w-100">
                 <div className="card shadow border-0 w-100 flex-row p-4">
-                    <h5 className="mb-0">Chỉnh sửa sản phẩm</h5>
+                    <h5 className="mb-0">Edit product</h5>
                     <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                         <StyledBreadcrumb
                             component="a"
                             href="#"
-                            label="Trang chủ"
+                            label="Home"
                             icon={<HomeIcon fontSize="small" />}
                         />
                         <StyledBreadcrumb
-                            label="Sản phẩm"
+                            label="Product"
                             component="a"
                             href="#"
                         />
                         <StyledBreadcrumb
-                            label="Chỉnh sửa sản phẩm"
+                            label="Edit product"
                         />
                     </Breadcrumbs>
                 </div>
@@ -513,16 +512,16 @@ const EditProduct = () => {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="card shadow border-0 p-4 mt-0">
-                                <h5 className="mb-4">Thông tin cơ bản</h5>
+                                <h5 className="mb-4">Basic information</h5>
 
                                 <div className="form-group">
-                                    <h6>Tên sản phẩm</h6>
+                                    <h6>Product name</h6>
                                     <input type="text"
                                         name="name" value={formFields.name} onChange={inputChange} />
                                 </div>
 
                                 <div className="form-group">
-                                    <h6>Mô tả</h6>
+                                    <h6>Description</h6>
                                     <textarea row={5} col={10}
                                         name="description" value={formFields.description} onChange={inputChange} />
                                 </div>
@@ -530,7 +529,7 @@ const EditProduct = () => {
                                 <div className="row">
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Danh Mục</h6>
+                                            <h6>Category</h6>
                                             <Select
                                                 value={formFields.category}
                                                 onChange={(e) => {
@@ -546,7 +545,7 @@ const EditProduct = () => {
                                                 className="w-100"
                                             >
                                                 <MenuItem value="">
-                                                    <em value={null}> -- Chọn danh mục --</em>
+                                                    <em value={null}>-- Select category --</em>
                                                 </MenuItem>
 
                                                 {context.catData?.categoryList?.map((cat, index) => (
@@ -561,7 +560,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Danh Mục Con</h6>
+                                            <h6>Sub-category</h6>
                                             <Select
                                                 value={subCategoryValue}
                                                 onChange={handleChangeSubCategory}
@@ -570,7 +569,7 @@ const EditProduct = () => {
                                                 className="w-100"
                                             >
                                                 <MenuItem value="">
-                                                    <em value={null}> -- Chọn danh mục con --</em>
+                                                    <em value={null}>-- Select sub-category --</em>
                                                 </MenuItem>
 
                                                 {
@@ -601,7 +600,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Giá cũ</h6>
+                                            <h6>Old price</h6>
                                             <input type="text"
                                                 name="oldPrice" value={formFields.oldPrice} onChange={inputChange} />
                                         </div>
@@ -609,7 +608,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Giảm giá</h6>
+                                            <h6>Discount</h6>
                                             <input type="text"
                                                 name="discount" value={formFields.discount} onChange={inputChange} />
                                         </div>
@@ -620,7 +619,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Đăng bán</h6>
+                                            <h6>Post for sale</h6>
                                             <Select
                                                 value={isFeaturedValue}
                                                 onChange={handleChangeisFeaturedValue}
@@ -628,15 +627,15 @@ const EditProduct = () => {
                                                 inputProps={{ 'aria-label': 'Without label' }}
                                                 className="w-100"
                                             >
-                                                <MenuItem className="text-capitalize" selected value={true}>Đăng</MenuItem>
-                                                <MenuItem className="text-capitalize" value={false}>Lưu bản nháp</MenuItem>
+                                                <MenuItem className="text-capitalize" selected value={true}>Post</MenuItem>
+                                                <MenuItem className="text-capitalize" value={false}>Save draft</MenuItem>
                                             </Select>
                                         </div>
                                     </div>
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Số lượng</h6>
+                                            <h6>Quantity</h6>
                                             <input type="text"
                                                 name="countInStock" value={formFields.countInStock} onChange={inputChange} />
                                         </div>
@@ -644,7 +643,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Thương hiệu</h6>
+                                            <h6>Brand</h6>
                                             <input type="text"
                                                 name="brand" value={formFields.brand} onChange={inputChange} />
                                         </div>
@@ -680,7 +679,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Cân Nặng</h6>
+                                            <h6>Weight</h6>
                                             <input type="text"
                                                 name="productWeight" value={formFields.productWeight} onChange={inputChange} />
                                         </div>
@@ -688,7 +687,7 @@ const EditProduct = () => {
 
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6>Kích thước</h6>
+                                            <h6>Size</h6>
                                             <Select
                                                 multiple
                                                 value={productSize}
@@ -700,23 +699,20 @@ const EditProduct = () => {
                                             >
 
                                                 {
-                                                    productSizeData?.map((item, index) => {
-                                                        return (
-                                                            <MenuItem
-                                                                value={item.productSize}>{item.productSize}
-                                                            </MenuItem>
-                                                        )
-                                                    })
-                                                }
-                                            </Select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="row">
-                                    <div className="col">
-                                        <div className="form-group">
-                                            <h6>Đánh giá</h6>
+                                                    productSizeData?.map((item, index) => <div className="">
+ <div className="">
+ <div className="">
+ <h6 className="">Product image URL</h6>
+ <div className="">
+ <input type="" ref={productImages}
+ Name="" onChange={inputChange}
+ Style={{ paddingRight: "" }} />
+ <Button className=""
+ OnClick={addProductImages}>Add</Button>
+ </div>
+ </div>
+ </div>
+ </div>                 <h6>Review</h6>
                                             <Rating
                                                 name="simple-controlled"
                                                 value={ratingsValue}
@@ -736,7 +732,7 @@ const EditProduct = () => {
                                 {/* <div className="row">
                                     <div className="col">
                                         <div className="form-group">
-                                            <h6 className="text-uppercase">URL ảnh sản phẩm</h6>
+                                            <h6 className="text-uppercase">Product image URL</h6>
                                             <div className="position-relative inputBtn">
                                                 <input type="text" ref={productImages}
                                                     name="images" onChange={inputChange}
@@ -754,7 +750,7 @@ const EditProduct = () => {
                         <div className="col-md-12">
                             <div className="card shadow border p-4 mt-0">
                                 <div className="imageUploadSec">
-                                    <h5 className="mb-4">Thêm ảnh sản phẩm</h5>
+                                    <h5 className="mb-4">Add product images</h5>
                                     <div className="imgUploadBox d-flex align-items-center">
                                         {
                                             preview?.length !== 0 && preview?.map((img, index) => {
@@ -778,22 +774,26 @@ const EditProduct = () => {
                                                                         src={`${img}`}
                                                                     />
                                                             }
-                                                        </div>
-                                                    </div>
-                                                )
-                                            })
-                                        }
-                                        <div className="uploadBox">
-                                            {
-                                                uploading === true ?
-                                                    <div className="progressBar text-center d-flex align-items-center justify-content-center flex-column">
-                                                        <CircularProgress color='inherit'
-                                                            className='loader ml-2' />
-                                                        <p>Uploading...</p>
+                                            <div className="">
+ <div className="">
+ {
+ ProductImagesArray.length!== 0 &&
+ <h4>Product images</h4>
+ }
+ <div className="" id="">
+ {
+ ProductImagesArray.map((image, index) => {
+ Return (
+ <div className="" key={index}>
+ <img src={image} alt="" className="" />
+ </div>
+ )
+ })
+ }
 
-                                                    </div>
-                                                    :
-                                                    <>
+ </div>
+ </div>
+ </div>                  <>
                                                         <input type="file" multiple name="images"
                                                             onChange={(e) => onChangeFile(e, `/api/products/upload`)} />
                                                         <div className="info">
@@ -811,7 +811,7 @@ const EditProduct = () => {
                                 <Button type="submit" className="btn-blue btn-lg btn-big">
                                     <FaCloudUploadAlt /> &nbsp;
                                     {loading === true ? <CircularProgress color='inherit'
-                                        className='loader ml-2' /> : 'Đăng bán'}
+                                        className='loader ml-2' /> : 'Post for sale'}
                                 </Button>
                             </div>
 

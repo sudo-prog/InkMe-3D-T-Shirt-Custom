@@ -102,7 +102,7 @@ const AddProductRams = () => {
             context.setAlterBox({
                 open: true,
                 color: true,
-                message: "Vui lòng nhập product rams"
+                message: "Please enter product rams"
             });
             return false;
         }
@@ -147,7 +147,7 @@ const AddProductRams = () => {
 
         <div className="right-content w-100">
             <div className="card shadow border-0 w-100 flex-row p-4">
-                <h5 className="mb-0">Thêm Rams sản phẩm</h5>
+                <h5 className="mb-0">Add product Rams</h5>
                 <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
                     <StyledBreadcrumb
                         component="a"
@@ -156,12 +156,12 @@ const AddProductRams = () => {
                         icon={<HomeIcon fontSize="small" />}
                     />
                     <StyledBreadcrumb
-                        label="Rams sản phẩm"
+                        label="Product Rams"
                         component="a"
                         href="#"
                     />
                     <StyledBreadcrumb
-                        label="Thêm Rams sản phẩm"
+                        label="Add product Rams"
                     />
                 </Breadcrumbs>
             </div>
@@ -183,7 +183,7 @@ const AddProductRams = () => {
                             <Button type="submit" className="btn-blue btn-lg btn-big">
                                 <FaCloudUploadAlt /> &nbsp;
                                 {loading === true ? <CircularProgress color='inherit'
-                                    className='loader ml-2' /> : 'Xác Nhận'}
+                                    className='loader ml-2' /> : 'Confirm'}
                             </Button>
                         </div>
                     </div>
@@ -202,7 +202,7 @@ const AddProductRams = () => {
                                         <tr>
                                             <th>#ID</th>
                                             <th>PRODUCT RAMS</th>
-                                            <th width="25%">Hành động</th>
+                                            <th width="25%">Action</th>
                                         </tr>
                                     </thead>
 
