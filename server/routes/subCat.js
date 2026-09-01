@@ -13,7 +13,7 @@ router.get(`/`, async (req, res) => {
         let subCategoryList = [];
 
         if (page > totalPages) {
-            return res.status(404).json({ message: "Không có dữ liệu" });
+            return res.status(404).json({ message: "No data" });
         }
 
         if (req.query.page !== undefined && req.query.perPage !== undefined) {
