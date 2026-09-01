@@ -128,7 +128,7 @@ router.post(`/signup`, async (req, res) => {
 
     res.status(200).json({
       message:
-        "Đăng kí tài khoản thành công, vui lòng kiểm tra mail để xác minh tài khoản",
+        "Account registered successfully, please check your email to verify your account",
       user: result,
       token: token,
     });
@@ -158,7 +158,7 @@ router.get(`/signup/verify/:token`, async (req, res) => {
 
     await user.save();
     return res.json({
-      message: "Tài khoản đã được xác minh thành công, bạn có thể đăng nhập",
+      message: "Account verified successfully, you can now log in",
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -353,7 +353,7 @@ router.post("/reset-password", async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       error: true,
-      message: "Lỗi máy chủ",
+      message: "Server error",
       notify: error.message,
     });
   }
